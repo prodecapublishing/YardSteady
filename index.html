@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yard Steady | Weekly Lawn Mowing in Pearland, Manvel & Friendswood | First Mow $20</title>
+<title>Weekly Lawn Mowing in Pearland, Manvel & Friendswood | Yard Steady</title>
 <meta name="description" content="Weekly lawn mowing in Pearland, Manvel and Friendswood. First mow $20, then $40 a week plus tax. No contract, cancel with one text, 7-day re-mow guarantee.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://yardsteady.com/">
@@ -11,6 +11,14 @@
 <meta property="og:description" content="Weekly mowing in Pearland, Manvel and Friendswood. No contract. Cancel with one text.">
 <meta property="og:url" content="https://yardsteady.com/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Yard Steady">
+<meta property="og:image" content="https://yardsteady.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Yard Steady: first mow $20, then weekly lawn mowing from $40">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="geo.region" content="US-TX">
+<meta name="geo.placename" content="Pearland">
 <meta name="theme-color" content="#2D6A2E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -169,6 +177,13 @@
   .promise-card p { color: var(--ink-soft); }
   .promise-card + .promise-card { margin-top: 26px; }
 
+  /* Service areas */
+  .area-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 28px; }
+  @media (max-width: 760px) { .area-list { grid-template-columns: 1fr; gap: 22px; } }
+  .area-list > div { border-top: 4px solid var(--turf); padding-top: 14px; }
+  .area-list .zips { font-weight: 700; margin-bottom: 4px; }
+  .area-list p { color: var(--ink-soft); }
+
   /* FAQ */
   .faq { margin-top: 32px; max-width: 820px; }
   .faq details { border-top: 1px solid var(--line); }
@@ -271,10 +286,153 @@
   .done p { color: var(--ink-soft); margin-bottom: 18px; }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"Yard Steady","url":"https://yardsteady.com/","email":"blambinvestmentsllc@gmail.com","areaServed":["Pearland TX","Manvel TX","Friendswood TX"],"description":"Weekly lawn mowing with set pricing, auto-billing, no contracts and a 7-day re-mow guarantee. First mow $20 when starting a weekly plan.","priceRange":"$40-$55 per week"}
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "LocalBusiness",
+   "@id": "https://yardsteady.com/#business",
+   "name": "Yard Steady",
+   "url": "https://yardsteady.com/",
+   "image": "https://yardsteady.com/og-image.png",
+   "logo": "https://yardsteady.com/apple-touch-icon.png",
+   "email": "blambinvestmentsllc@gmail.com",
+   "description": "Weekly residential lawn mowing in Pearland, Manvel and Friendswood, Texas. Set weekly pricing, automatic billing, no contract and a 7-day re-mow guarantee.",
+   "priceRange": "$40-$55 per week",
+   "currenciesAccepted": "USD",
+   "paymentAccepted": "Credit card",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Pearland",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+   },
+   "areaServed": [
+    {
+     "@type": "City",
+     "name": "Pearland, TX"
+    },
+    {
+     "@type": "City",
+     "name": "Manvel, TX"
+    },
+    {
+     "@type": "City",
+     "name": "Friendswood, TX"
+    }
+   ],
+   "parentOrganization": {
+    "@type": "Organization",
+    "name": "BLambInvestments LLC"
+   },
+   "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Weekly lawn mowing",
+    "itemListElement": [
+     {
+      "@type": "Offer",
+      "name": "Standard yard weekly mowing",
+      "price": "40",
+      "priceCurrency": "USD",
+      "description": "Weekly mow, string trim and blow for a typical subdivision lot. First mow $20.",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Weekly lawn mowing, standard yard",
+       "serviceType": "Lawn mowing"
+      }
+     },
+     {
+      "@type": "Offer",
+      "name": "Large yard weekly mowing",
+      "price": "55",
+      "priceCurrency": "USD",
+      "description": "Weekly mow, string trim and blow for a corner lot or larger property. First mow $20.",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Weekly lawn mowing, large yard",
+       "serviceType": "Lawn mowing"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://yardsteady.com/#website",
+   "url": "https://yardsteady.com/",
+   "name": "Yard Steady",
+   "publisher": {
+    "@id": "https://yardsteady.com/#business"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What's included each week?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Mowing, string trimming around edges, and blowing clippings off your driveway and walkways. Landscaping, weeding and shrub trimming aren't included."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "When will my first mow happen?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You choose a start date at least 72 hours out. We mow within a 1–3 day window of that date, based on our route."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do I need to be home?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Leave the gate unlocked and pets inside on mow day. You can add a gate code or notes when you sign up."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What if it rains?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Rain can shift your mow within the 1–3 day service window. If it has to move further, we'll text you."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I pay?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "After you sign up we send a secure Stripe link. Your card is billed weekly, plus 8.25% sales tax. No cash or checks to hand over."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I cancel?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Text us or email us with your name and address. We cancel the same day. There's no contract and no cancellation fee."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "My grass is really overgrown. Is that a problem?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not at all. If it's over 9 inches tall on the first visit, a one-time overgrowth fee of 50–100% of the weekly rate may apply. We'll always tell you before charging it."
+     }
+    }
+   ]
+  }
+ ]
+}
 </script>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232D6A2E'/%3E%3Cpath d='M0 64 L22 0 H36 L14 64Z' fill='%233A7D39'/%3E%3Cpath d='M28 64 L50 0 H64 V8 L44 64Z' fill='%233A7D39'/%3E%3Ctext x='32' y='43' font-family='Arial,Helvetica,sans-serif' font-weight='900' font-size='26' fill='%23ffffff' text-anchor='middle'%3EYS%3C/text%3E%3C/svg%3E">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 </head>
 <body>
@@ -305,7 +463,7 @@
   <section class="hero">
     <div class="wrap">
       <div>
-        <p class="hero-area">Pearland, Manvel and Friendswood</p>
+        <p class="hero-area">Weekly lawn mowing in Pearland, Manvel and Friendswood, TX</p>
         <h1>Your lawn, mowed every week.</h1>
         <p class="hero-sub">First mow $20, then $40 a week plus tax. No contract, and you can cancel with one text.</p>
         <form class="zip-form" onsubmit="checkZip(event)" novalidate>
@@ -444,6 +602,18 @@
           <h3>Locally owned</h3>
           <p>Yard Steady is based in Pearland and serves Pearland, Manvel and Friendswood. League City, Alvin and Clear Lake are next.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="areas">
+    <div class="wrap">
+      <h2>Where we mow</h2>
+      <p class="lede">Weekly lawn mowing for homes in Pearland, Manvel and Friendswood, Texas. League City, Alvin and Clear Lake are next.</p>
+      <div class="area-list">
+        <div><h3>Pearland</h3><p class="zips">77581, 77584, 77588</p><p>Including Shadow Creek Ranch, Silverlake, Southdown, Country Place, Green Tee Terrace and Old Town.</p></div>
+        <div><h3>Manvel</h3><p class="zips">77578</p><p>Including Pomona, Rodeo Palms, Sedona Lakes and Del Bello Lakes.</p></div>
+        <div><h3>Friendswood</h3><p class="zips">77546</p><p>Including West Ranch, Wedgewood Village, Forest Bend, Sunmeadow and Windsong.</p></div>
       </div>
     </div>
   </section>
@@ -849,6 +1019,7 @@
     $('page-referral').style.display = 'none';
     updateEarnings(5);
     if (params.get('page') === 'referral') showPage('referral');
+    if (params.get('start')) openModal(params.get('plan') === 'large' ? 'large' : 'small', 'link-' + (params.get('from') || 'start'));
   });
 </script>
 </body>
