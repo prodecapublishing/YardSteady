@@ -271,7 +271,7 @@
   .done p { color: var(--ink-soft); margin-bottom: 18px; }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"Yard Steady","url":"https://yardsteady.com/","telephone":"+1-832-798-4827","email":"blambinvestmentsllc@gmail.com","areaServed":["Pearland TX","Manvel TX","Friendswood TX"],"description":"Weekly lawn mowing with set pricing, auto-billing, no contracts and a 7-day re-mow guarantee. First mow $20 when starting a weekly plan.","priceRange":"$40-$55 per week"}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Yard Steady","url":"https://yardsteady.com/","email":"blambinvestmentsllc@gmail.com","areaServed":["Pearland TX","Manvel TX","Friendswood TX"],"description":"Weekly lawn mowing with set pricing, auto-billing, no contracts and a 7-day re-mow guarantee. First mow $20 when starting a weekly plan.","priceRange":"$40-$55 per week"}
 </script>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232D6A2E'/%3E%3Cpath d='M0 64 L22 0 H36 L14 64Z' fill='%233A7D39'/%3E%3Cpath d='M28 64 L50 0 H64 V8 L44 64Z' fill='%233A7D39'/%3E%3Ctext x='32' y='43' font-family='Arial,Helvetica,sans-serif' font-weight='900' font-size='26' fill='%23ffffff' text-anchor='middle'%3EYS%3C/text%3E%3C/svg%3E">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -294,7 +294,7 @@
       <a href="#pricing" class="hide-sm" onclick="showPage('home')">Prices</a>
       <a href="#faq" class="hide-sm" onclick="showPage('home')">Questions</a>
       <a href="#" class="hide-sm" onclick="showPage('referral'); return false;">Referrals</a>
-      <a href="sms:+18327984827" class="header-phone"><span class="hide-sm">Text (832) 798-4827</span><span class="show-sm">Text us</span></a>
+      <a href="sms:+18327984827" class="header-phone">Text us</a>
       <button type="button" class="btn btn-sun" onclick="openModal('small','header')">Get my $20 mow</button>
     </nav>
   </div>
@@ -315,7 +315,7 @@
             <button type="submit" class="btn btn-sun">Get my $20 first mow</button>
           </div>
           <p class="zip-msg" id="zipMsg" role="status"></p>
-          <p class="zip-help">Questions first? <a href="sms:+18327984827">Text us at (832) 798-4827</a></p>
+          <p class="zip-help">Questions first? <a href="sms:+18327984827">Text us</a></p>
         </form>
       </div>
       <div class="sign-holder" aria-hidden="true">
@@ -325,7 +325,7 @@
           <div class="sign-what">first mow</div>
           <div class="sign-rule"></div>
           <div class="sign-then">then <strong>$40</strong> a week</div>
-          <div class="sign-phone">832-798-4827</div>
+          <div class="sign-phone">yardsteady.com</div>
         </div>
       </div>
     </div>
@@ -438,7 +438,7 @@
         </div>
         <div class="promise-card">
           <h3>Cancel with one message</h3>
-          <p>Text (832) 798-4827 or email us with your name and address. Cancelled the same day, with no fee and no call.</p>
+          <p><a href="sms:+18327984827">Text us</a> or <a href="mailto:blambinvestmentsllc@gmail.com?subject=Cancel%20My%20Yard%20Steady%20Service">email us</a> with your name and address. Cancelled the same day, with no fee and no call.</p>
         </div>
         <div class="promise-card">
           <h3>Locally owned</h3>
@@ -457,7 +457,7 @@
         <details><summary>Do I need to be home?</summary><p>No. Leave the gate unlocked and pets inside on mow day. You can add a gate code or notes when you sign up.</p></details>
         <details><summary>What if it rains?</summary><p>Rain can shift your mow within the 1–3 day service window. If it has to move further, we'll text you.</p></details>
         <details><summary>How do I pay?</summary><p>After you sign up we send a secure Stripe link. Your card is billed weekly, plus 8.25% sales tax. No cash or checks to hand over.</p></details>
-        <details><summary>How do I cancel?</summary><p>Text (832) 798-4827 or email us with your name and address. We cancel the same day. There's no contract and no cancellation fee.</p></details>
+        <details><summary>How do I cancel?</summary><p><a href="sms:+18327984827">Text us</a> or <a href="mailto:blambinvestmentsllc@gmail.com?subject=Cancel%20My%20Yard%20Steady%20Service">email us</a> with your name and address. We cancel the same day. There's no contract and no cancellation fee.</p></details>
         <details><summary>My grass is really overgrown. Is that a problem?</summary><p>Not at all. If it's over 9 inches tall on the first visit, a one-time overgrowth fee of 50–100% of the weekly rate may apply. We'll always tell you before charging it.</p></details>
       </div>
     </div>
@@ -545,7 +545,7 @@
       <p class="small">© 2026 Yard Steady, a brand of BLambInvestments LLC.</p>
     </div>
     <nav aria-label="Footer">
-      <a href="sms:+18327984827">Text (832) 798-4827</a>
+      <a href="sms:+18327984827">Text us</a>
       <a href="mailto:blambinvestmentsllc@gmail.com">blambinvestmentsllc@gmail.com</a>
       <a href="mailto:blambinvestmentsllc@gmail.com?subject=Cancel%20My%20Yard%20Steady%20Service&body=Name%3A%20%0AService%20address%3A%20%0A%0APlease%20cancel%20my%20weekly%20service.">Email us to cancel</a>
       <a href="#" onclick="showPage('referral'); return false;">Referral program</a>
@@ -831,7 +831,7 @@
       .catch(err => {
         console.error(err);
         btn.disabled = false; btn.textContent = 'Send my signup';
-        $('reviewNote').innerHTML = `<p style="color:var(--error);"><b>That didn’t go through.</b> Try again, or <a href="sms:+18327984827">text us at (832) 798-4827</a> and we’ll set you up.</p>`;
+        $('reviewNote').innerHTML = `<p style="color:var(--error);"><b>That didn’t go through.</b> Try again, or <a href="sms:+18327984827">text us</a> and we’ll set you up.</p>`;
         track('signup_error', { plan });
       });
   }
