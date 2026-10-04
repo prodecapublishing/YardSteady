@@ -3,1065 +3,853 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yard Steady — Reliable Weekly Lawn Care in Pearland, Manvel & Friendswood</title>
-<meta name="description" content="Reliable weekly lawn care in Pearland, Manvel, Friendswood and nearby areas. Simple pricing starting at $45/week plus tax. No contracts, auto-billing, and a 7-day re-mow guarantee.">
+<title>Yard Steady | Weekly Lawn Mowing in Pearland, Manvel & Friendswood | First Mow $20</title>
+<meta name="description" content="Weekly lawn mowing in Pearland, Manvel and Friendswood. First mow $20, then $40 a week plus tax. No contract, cancel with one text, 7-day re-mow guarantee.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://yardsteady.com/">
-<meta property="og:title" content="Yard Steady — Reliable Weekly Lawn Care">
-<meta property="og:description" content="Weekly mowing starting at $45/week plus tax. No contracts. Auto-billing. 7-day re-mow guarantee.">
+<meta property="og:title" content="Yard Steady | First mow $20, then weekly lawn care from $40">
+<meta property="og:description" content="Weekly mowing in Pearland, Manvel and Friendswood. No contract. Cancel with one text.">
 <meta property="og:url" content="https://yardsteady.com/">
 <meta property="og:type" content="website">
+<meta name="theme-color" content="#2D6A2E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- GA4: paste your Google Analytics snippet here (gtag.js). The page already sends events through track(). -->
+
 <style>
   :root {
-    --green: #4db840; --green-light: #6ecf58; --green-glow: #8de86b;
-    --green-pale: #16241a; --white: #1b2317; --off-white: #0e130c;
-    --gray-100: rgba(255,255,255,0.09); --gray-200: rgba(255,255,255,0.18); --gray-500: #99a192;
-    --gray-700: #cfd6c9; --dark: #090c07; --text: #dde3d7; --heading: #f2f6ee;
-    --font-head: 'Barlow Condensed', sans-serif; --font-body: 'DM Sans', sans-serif;
-    --radius: 12px; --shadow: 0 4px 24px rgba(0,0,0,0.35); --shadow-lg: 0 16px 48px rgba(0,0,0,0.5);
+    --turf: #2D6A2E;
+    --clipping: #3A7D39;
+    --ink: #17251A;
+    --ink-soft: #46554A;
+    --paper: #FFFFFF;
+    --sage: #F0F4EC;
+    --line: #D9E2D3;
+    --sun: #F6C445;
+    --sun-deep: #E9B226;
+    --error: #B42318;
+    --head: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    --body: 'DM Sans', system-ui, sans-serif;
+    --wrap: 1120px;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { font-family: var(--font-body); background: var(--off-white); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { font-family: var(--body); font-size: 17px; line-height: 1.6; color: var(--ink); background: var(--paper); -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; display: block; }
+  a { color: var(--turf); }
+  :focus-visible { outline: 3px solid var(--sun-deep); outline-offset: 2px; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
 
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(9,12,7,0.94); backdrop-filter: blur(6px); border-bottom: 1px solid var(--gray-100); padding: 0 5vw; height: 72px; display: flex; align-items: center; justify-content: space-between; }
-  @media (max-width: 640px) { nav { backdrop-filter: none; background: rgba(8,11,6,0.98); } }
-  .nav-logo { font-family: var(--font-head); font-weight: 900; font-size: 1.4rem; color: var(--green); letter-spacing: 0.02em; text-decoration: none; display: flex; align-items: center; gap: 8px; }
-  .nav-links { display: flex; align-items: center; gap: 24px; }
-  .nav-links a { font-size: 0.88rem; font-weight: 500; color: var(--gray-700); text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--green); }
-  .btn-nav { background: var(--green); color: #fff; border: none; padding: 9px 20px; border-radius: 8px; font-family: var(--font-body); font-weight: 600; font-size: 0.88rem; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.1s; }
-  .btn-nav:hover { background: var(--green-light); transform: translateY(-1px); }
-  @media (max-width: 600px) { .nav-links { display: none; } }
+  h1, h2, h3 { font-family: var(--head); font-weight: 800; line-height: 1.02; letter-spacing: 0.005em; }
+  h2 { font-size: clamp(2.2rem, 4.4vw, 3.2rem); margin-bottom: 14px; }
+  h3 { font-size: 1.5rem; margin-bottom: 6px; }
+  .lede { font-size: 1.12rem; color: var(--ink-soft); max-width: 60ch; }
 
-  /* HERO — centered */
-  #home { min-height: 100vh; padding-top: 72px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; text-align: center; }
-  .hero-bg { position: absolute; inset: 0; z-index: 0; background: linear-gradient(180deg, rgba(6,16,4,0.15) 0%, rgba(6,16,4,0.1) 45%, rgba(4,12,3,0.72) 100%), linear-gradient(135deg, rgba(8,22,6,0.86) 0%, rgba(16,44,10,0.72) 55%, rgba(38,104,29,0.4) 100%), url('hero.jpg') center 50%/cover no-repeat; }
-  .hero-content { position: relative; z-index: 1; max-width: 720px; padding: 80px 5vw 40px; display: flex; flex-direction: column; align-items: center; }
-  .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(77,184,64,0.18); border: 1px solid rgba(77,184,64,0.4); color: #a8eea0; font-size: 0.82rem; font-weight: 600; padding: 5px 14px; border-radius: 40px; margin-bottom: 24px; letter-spacing: 0.05em; text-transform: uppercase; }
-  .hero-badge::before { content: '●'; font-size: 0.6rem; color: var(--green-glow); animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-  h1 { font-family: var(--font-head); font-weight: 900; font-size: clamp(2.8rem, 6vw, 5.2rem); line-height: 1.0; color: #fff; margin-bottom: 20px; letter-spacing: -0.01em; }
-  h1 em { color: var(--green-glow); font-style: normal; }
-  .hero-sub { font-size: clamp(1rem, 2vw, 1.18rem); color: rgba(255,255,255,0.88); margin-bottom: 16px; max-width: 520px; font-weight: 400; }
-  .hero-referral { font-size: 0.88rem; color: rgba(168,238,160,0.9); font-weight: 500; margin-bottom: 36px; display: flex; align-items: center; gap: 7px; max-width: 480px; line-height: 1.5; }
-  .hero-referral::before { content: '💰'; flex-shrink: 0; }
-  .cta-group { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
-  .btn-primary { background: linear-gradient(135deg, var(--green-light) 0%, var(--green) 100%); color: #fff; border: none; padding: 16px 34px; border-radius: 10px; font-family: var(--font-head); font-weight: 800; font-size: 1.15rem; letter-spacing: 0.04em; cursor: pointer; text-decoration: none; box-shadow: 0 4px 20px rgba(45,122,34,0.45); transition: transform 0.15s, box-shadow 0.15s; display: inline-flex; align-items: center; gap: 8px; }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(45,122,34,0.55); }
-  .btn-secondary { background: rgba(255,255,255,0.12); color: #fff; border: 1.5px solid rgba(255,255,255,0.4); padding: 15px 28px; border-radius: 10px; font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; letter-spacing: 0.04em; cursor: pointer; text-decoration: none; backdrop-filter: blur(8px); transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 7px; }
-  .btn-secondary:hover { background: rgba(255,255,255,0.22); transform: translateY(-1px); }
-  .hero-trust { position: relative; z-index: 1; display: flex; gap: 32px; flex-wrap: wrap; justify-content: center; padding: 22px 5vw; border-top: 1px solid rgba(255,255,255,0.1); width: 100%; background: rgba(4,12,3,0.62); }
-  .trust-item { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.80); font-size: 0.88rem; font-weight: 500; }
-  .trust-icon { color: var(--green-glow); font-size: 1rem; }
+  /* Buttons */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--head); font-weight: 800; font-size: 1.25rem; letter-spacing: 0.01em; text-decoration: none; border: 2px solid transparent; border-radius: 8px; padding: 14px 26px; cursor: pointer; min-height: 52px; transition: background 0.15s, transform 0.1s; }
+  .btn:active { transform: translateY(1px); }
+  .btn-sun { background: var(--sun); color: var(--ink); border-color: var(--ink); box-shadow: 0 3px 0 var(--ink); }
+  .btn-sun:hover { background: var(--sun-deep); }
+  .btn-turf { background: var(--turf); color: #fff; }
+  .btn-turf:hover { background: #245725; }
+  .btn-ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .btn-ghost:hover { background: var(--sage); }
+  .btn-block { width: 100%; }
 
-  section { padding: 80px 5vw; content-visibility: auto; contain-intrinsic-size: 1px 800px; }
-  .section-inner { max-width: 1080px; margin: 0 auto; }
-  .section-tag { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
-  h2 { font-family: var(--font-head); font-weight: 900; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.05; color: var(--heading); margin-bottom: 16px; letter-spacing: -0.01em; }
-  .section-sub { font-size: 1.05rem; color: var(--gray-500); max-width: 520px; margin-bottom: 52px; }
+  /* Header */
+  header.site { background: var(--paper); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; }
+  header.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+  .logo { white-space: nowrap; display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-family: var(--head); font-weight: 900; font-size: 1.6rem; }
+  .logo svg { flex-shrink: 0; }
+  .header-links { display: flex; align-items: center; gap: 22px; }
+  .header-links a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+  .header-links a:hover { color: var(--turf); text-decoration: underline; }
+  .header-links .btn { font-size: 1.05rem; padding: 8px 16px; min-height: 42px; box-shadow: 0 2px 0 var(--ink); }
+  .header-phone { font-weight: 700 !important; }
+  .show-sm { display: none; }
+  @media (max-width: 760px) { .header-links .hide-sm { display: none; } .header-links .show-sm { display: inline; } }
+  @media (max-width: 480px) { .header-links .btn { display: none; } }
 
-  #how { background: var(--off-white); }
-  .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
-  .step-card { background: var(--white); border-radius: var(--radius); padding: 36px 32px; border: 1px solid var(--gray-100); box-shadow: var(--shadow); position: relative; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
-  .step-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-  .step-num { font-family: var(--font-head); font-weight: 900; font-size: 4.5rem; line-height: 1; color: var(--green-pale); position: absolute; top: 16px; right: 20px; z-index: 0; }
-  .step-icon { font-size: 2.2rem; margin-bottom: 16px; position: relative; z-index: 1; }
-  .step-card h3 { font-family: var(--font-head); font-weight: 800; font-size: 1.45rem; color: var(--heading); margin-bottom: 10px; position: relative; z-index: 1; }
-  .step-card p { font-size: 0.95rem; color: var(--gray-500); line-height: 1.65; position: relative; z-index: 1; }
-  .step-price { display: inline-block; margin-top: 12px; background: var(--green-pale); color: var(--green); font-weight: 700; font-size: 0.88rem; padding: 4px 12px; border-radius: 6px; position: relative; z-index: 1; }
+  /* Hero: the mowed lawn */
+  .hero { position: relative; color: #fff; background: repeating-linear-gradient(100deg, var(--turf) 0 110px, var(--clipping) 110px 220px); overflow: hidden; }
+  .hero .wrap { display: grid; grid-template-columns: 1.25fr 0.85fr; gap: 40px; align-items: center; padding-top: 64px; padding-bottom: 88px; }
+  @media (max-width: 860px) { .hero .wrap { grid-template-columns: 1fr; padding-top: 40px; padding-bottom: 56px; gap: 36px; } }
+  .hero-area { font-weight: 700; font-size: 1rem; color: #E3F0DC; margin-bottom: 14px; }
+  .hero h1 { font-size: clamp(3rem, 7.4vw, 5.6rem); font-weight: 900; margin-bottom: 18px; text-shadow: 0 2px 0 rgba(0,0,0,0.12); }
+  .hero-sub { font-size: 1.2rem; max-width: 34ch; color: #F4FAF0; margin-bottom: 28px; }
+  .zip-form { background: var(--paper); color: var(--ink); border-radius: 10px; padding: 18px; max-width: 520px; box-shadow: 0 10px 30px rgba(10,30,10,0.25); }
+  .zip-form label { display: block; font-weight: 700; margin-bottom: 8px; }
+  .zip-row { display: flex; gap: 10px; }
+  .zip-row input { flex: 0 0 140px; min-width: 0; font: inherit; font-size: 1.15rem; padding: 12px 14px; border: 2px solid var(--line); border-radius: 8px; }
+  .zip-row input:focus { border-color: var(--turf); outline: none; }
+  .zip-row .btn { flex: 1; font-size: 1.15rem; padding: 12px 16px; }
+  @media (max-width: 440px) { .zip-row { flex-direction: column; } .zip-row input { flex: none; } }
+  .zip-msg { margin-top: 10px; font-size: 0.95rem; display: none; }
+  .zip-msg.show { display: block; }
+  .zip-msg.bad { color: var(--error); }
+  .zip-help { margin-top: 10px; font-size: 0.92rem; color: var(--ink-soft); }
+  .zip-help a { font-weight: 700; }
 
-  #why { background: var(--white); }
-  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-  .why-card { padding: 36px 32px; border-radius: var(--radius); border: 1px solid var(--gray-100); transition: border-color 0.2s, box-shadow 0.2s; }
-  .why-card:hover { border-color: var(--green); box-shadow: 0 0 0 3px rgba(77,184,64,0.18); }
-  .why-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--green-pale); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 18px; }
-  .why-card h3 { font-family: var(--font-head); font-weight: 800; font-size: 1.3rem; color: var(--heading); margin-bottom: 8px; }
-  .why-card p { font-size: 0.95rem; color: var(--gray-500); line-height: 1.65; }
+  /* Yard sign */
+  .sign-holder { display: flex; justify-content: center; padding-bottom: 70px; }
+  @media (max-width: 860px) { .sign-holder { display: none; } }
+  .sign { position: relative; background: var(--paper); color: var(--ink); width: 300px; padding: 26px 24px 22px; border: 3px solid var(--ink); border-radius: 6px; transform: rotate(-3deg); box-shadow: 8px 10px 0 rgba(10,30,10,0.22); text-align: center; }
+  .sign::before, .sign::after { content: ''; position: absolute; top: 100%; width: 6px; height: 90px; background: linear-gradient(90deg, #7C837A, #B4BAB1, #7C837A); }
+  .sign::before { left: 30%; }
+  .sign::after { right: 30%; }
+  .sign-top { font-family: var(--head); font-weight: 800; font-size: 1.3rem; color: var(--turf); }
+  .sign-price { font-family: var(--head); font-weight: 900; font-size: 6.5rem; line-height: 0.9; margin: 4px 0 2px; }
+  .sign-price sup { font-size: 0.45em; vertical-align: 0.95em; margin-right: 2px; }
+  .sign-what { font-family: var(--head); font-weight: 800; font-size: 1.7rem; }
+  .sign-rule { height: 3px; background: var(--ink); margin: 14px 0 12px; }
+  .sign-then { font-size: 1rem; font-weight: 500; }
+  .sign-then strong { font-family: var(--head); font-size: 1.4rem; }
+  .sign-phone { margin-top: 10px; font-family: var(--head); font-weight: 800; font-size: 1.35rem; letter-spacing: 0.02em; }
 
-  #pricing { background: var(--dark); }
-  #pricing h2 { color: #fff; }
-  #pricing .section-tag { color: var(--green-glow); }
-  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; max-width: 960px; }
-  .price-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 40px 36px; position: relative; transition: border-color 0.2s; }
-  .price-card.featured { border-color: var(--green-glow); box-shadow: 0 0 0 1px var(--green-glow), 0 12px 40px rgba(77,184,64,0.2); }
-  .price-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--green); color: #fff; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; padding: 4px 14px; border-radius: 20px; text-transform: uppercase; white-space: nowrap; }
-  .price-label { font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
-  .price-amount { font-family: var(--font-head); font-weight: 900; font-size: 3.8rem; line-height: 1; color: #fff; margin-bottom: 4px; }
-  .price-period { font-size: 0.9rem; color: rgba(255,255,255,0.45); margin-bottom: 28px; }
-  .price-list { list-style: none; margin-bottom: 32px; }
-  .price-list li { font-size: 0.92rem; color: rgba(255,255,255,0.75); padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; gap: 8px; }
-  .price-list li::before { content: '✓'; color: var(--green-glow); font-weight: 700; }
+  /* Trust row */
+  .trust { background: var(--ink); color: #fff; }
+  .trust ul { list-style: none; display: flex; flex-wrap: wrap; gap: 10px 32px; justify-content: space-between; padding: 16px 0; }
+  .trust li { display: flex; align-items: center; gap: 8px; font-weight: 500; font-size: 0.98rem; }
+  .trust svg { color: var(--sun); flex-shrink: 0; }
+  @media (max-width: 760px) { .trust ul { justify-content: flex-start; } }
 
-  #testimonials { background: var(--green-pale); }
-  .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-  .testi-card { background: var(--white); border-radius: var(--radius); padding: 32px 28px; box-shadow: var(--shadow); }
-  .stars { color: #f5a623; font-size: 1.1rem; margin-bottom: 14px; }
-  .testi-text { font-size: 0.97rem; color: var(--gray-700); line-height: 1.7; font-style: italic; margin-bottom: 20px; }
-  .testi-author { display: flex; align-items: center; gap: 12px; }
-  .testi-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; color: #fff; font-family: var(--font-head); font-weight: 800; font-size: 1.1rem; }
-  .testi-name { font-weight: 600; font-size: 0.92rem; color: var(--heading); }
-  .testi-loc { font-size: 0.8rem; color: var(--gray-500); }
+  section.block { padding: 80px 0; }
+  section.block.alt { background: var(--sage); }
+  @media (max-width: 760px) { section.block { padding: 56px 0; } }
 
-  #forwhom { background: var(--white); }
-  .forwhom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  @media (max-width: 640px) { .forwhom-grid { grid-template-columns: 1fr; } }
-  .forwhom-card { border-radius: var(--radius); padding: 36px 32px; }
-  .forwhom-card.yes { background: var(--green-pale); border: 1px solid rgba(77,184,64,0.3); }
-  .forwhom-card.no { background: rgba(200,80,80,0.10); border: 1px solid rgba(220,120,120,0.28); }
-  .forwhom-card h3 { font-family: var(--font-head); font-weight: 800; font-size: 1.4rem; margin-bottom: 20px; }
-  .forwhom-card.yes h3 { color: var(--green); }
-  .forwhom-card.no h3 { color: #ff9c8a; }
-  .forwhom-list { list-style: none; }
-  .forwhom-list li { font-size: 0.95rem; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: flex-start; gap: 9px; color: var(--gray-700); }
-  .forwhom-list li:last-child { border-bottom: none; }
-  .forwhom-card.yes .forwhom-list li::before { content: '✓'; color: var(--green); font-weight: 700; margin-top: 1px; }
-  .forwhom-card.no .forwhom-list li::before { content: '✕'; color: #ff9c8a; font-weight: 700; margin-top: 1px; }
-  .forwhom-footnote { text-align: center; margin-top: 36px; font-size: 1rem; color: var(--gray-500); font-weight: 500; }
+  /* Steps */
+  .steps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 40px; counter-reset: step; }
+  @media (max-width: 860px) { .steps { grid-template-columns: 1fr; gap: 26px; } }
+  .steps li { counter-increment: step; border-top: 4px solid var(--turf); padding-top: 16px; }
+  .steps li::before { content: counter(step); display: block; font-family: var(--head); font-weight: 900; font-size: 3rem; line-height: 1; color: var(--turf); margin-bottom: 8px; }
+  .steps p { color: var(--ink-soft); }
 
-  #cta-bottom { background: linear-gradient(135deg, var(--dark) 0%, #1e3a16 100%); text-align: center; padding: 80px 5vw; }
-  #cta-bottom h2 { color: #fff; margin-bottom: 12px; }
-  #cta-bottom p { color: rgba(255,255,255,0.6); max-width: 440px; margin: 0 auto 40px; font-size: 1.05rem; }
-  .cta-pair { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-  .btn-cta { background: linear-gradient(135deg, var(--green-light) 0%, var(--green) 100%); color: #fff; border: none; padding: 18px 40px; border-radius: 10px; font-family: var(--font-head); font-weight: 800; font-size: 1.2rem; letter-spacing: 0.04em; cursor: pointer; text-decoration: none; box-shadow: 0 4px 24px rgba(45,122,34,0.5); transition: transform 0.15s, box-shadow 0.15s; display: inline-block; }
-  .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(45,122,34,0.6); }
-  .btn-cta-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); padding: 17px 32px; border-radius: 10px; font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; letter-spacing: 0.04em; cursor: pointer; text-decoration: none; transition: border-color 0.2s, background 0.2s; display: inline-block; }
-  .btn-cta-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.07); }
-
-  footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,0.06); padding: 32px 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-  footer p { font-size: 0.82rem; color: rgba(255,255,255,0.35); }
-  footer a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.82rem; }
-  footer a:hover { color: var(--green-glow); }
-
-  /* SERVICE AREAS */
-  .area-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 36px; }
-  .area-card { background: var(--white); border-radius: 16px; padding: 24px 20px; box-shadow: var(--shadow); border: 1px solid var(--gray-100); }
-  .area-card h3 { font-family: var(--font-head); font-weight: 800; font-size: 1.2rem; color: var(--heading); margin-bottom: 8px; }
-  .area-card p { font-size: 0.88rem; color: var(--gray-500); line-height: 1.6; }
-
-  /* REFERRAL PAGE */
-  #page-referral { display: none; }
-  .referral-hero { background: linear-gradient(135deg, var(--dark) 0%, #1a3512 100%); padding: 100px 5vw 80px; text-align: center; }
-  .referral-hero h1 { font-size: clamp(2.4rem, 5vw, 4rem); color: #fff; max-width: 700px; margin: 0 auto 16px; }
-  .ref-hero-stats { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 28px 40px; max-width: 560px; margin: 40px auto 0; }
-  .ref-hero-stat { text-align: center; flex: 1; min-width: 120px; }
-  .ref-hero-stat-num { font-family: var(--font-head); font-weight: 900; font-size: 2.6rem; color: var(--green-glow); line-height: 1; }
-  .ref-hero-stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.55); margin-top: 4px; font-weight: 500; }
-  .ref-hero-stat-divider { width: 1px; height: 48px; background: rgba(255,255,255,0.12); flex-shrink: 0; margin: 0 8px; }
-  .ref-steps { background: var(--white); padding: 72px 5vw; }
-  .ref-steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; max-width: 860px; margin: 0 auto; }
-  .ref-step { text-align: center; padding: 36px 24px; border-radius: var(--radius); border: 1px solid var(--gray-100); }
-  .ref-step-num { width: 52px; height: 52px; border-radius: 50%; background: var(--green); color: #fff; font-family: var(--font-head); font-weight: 900; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
-  .ref-step h3 { font-family: var(--font-head); font-weight: 800; font-size: 1.25rem; margin-bottom: 8px; }
-  .ref-step p { font-size: 0.92rem; color: var(--gray-500); }
-  .ref-earnings { background: var(--green-pale); padding: 72px 5vw; text-align: center; }
-  .earn-calc-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 680px; margin: 0 auto; background: var(--white); border-radius: 20px; padding: 36px 40px; box-shadow: var(--shadow-lg); border: 1px solid var(--gray-100); }
-  @media (max-width: 600px) { .earn-calc-wrap { grid-template-columns: 1fr; padding: 24px 20px; } }
-  .earn-slider-label { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--gray-500); display: block; margin-bottom: 16px; }
-  .earn-slider-val-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px; }
-  .earn-slider-val-num { font-family: var(--font-head); font-weight: 900; font-size: 3rem; color: var(--heading); line-height: 1; }
-  .earn-slider-val-label { font-size: 0.9rem; color: var(--gray-500); }
-  .earn-slider { width: 100%; -webkit-appearance: none; appearance: none; height: 6px; border-radius: 3px; background: linear-gradient(to right, var(--green) 0%, var(--green) 20%, var(--gray-200) 20%); outline: none; cursor: pointer; }
-  .earn-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%; background: var(--green); box-shadow: 0 2px 8px rgba(45,122,34,0.4); cursor: pointer; border: 3px solid #fff; }
-  .earn-slider-range-labels { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--gray-500); margin-top: 8px; }
-  .earn-calc-result { display: flex; flex-direction: column; justify-content: center; text-align: center; border-left: 1px solid var(--gray-100); padding-left: 40px; }
-  @media (max-width: 600px) { .earn-calc-result { border-left: none; border-top: 1px solid var(--gray-100); padding-left: 0; padding-top: 24px; } }
-  .earn-result-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-500); margin-bottom: 8px; }
-  .earn-result-amount { font-family: var(--font-head); font-weight: 900; font-size: 3.8rem; color: var(--green); line-height: 1; margin-bottom: 4px; }
-  .earn-result-annual { font-size: 0.92rem; color: var(--gray-500); margin-bottom: 12px; }
-  .earn-result-annual span { color: var(--heading); font-weight: 600; }
-  .earn-result-note { font-size: 0.78rem; color: var(--gray-500); line-height: 1.5; background: var(--green-pale); padding: 8px 12px; border-radius: 8px; }
-  .earnings-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
-  .earn-card { background: var(--white); border-radius: var(--radius); padding: 32px 40px; box-shadow: var(--shadow); min-width: 180px; border-bottom: 3px solid var(--green); text-align: center; }
-  .earn-homes { font-size: 0.85rem; font-weight: 600; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
-  .earn-amount { font-family: var(--font-head); font-weight: 900; font-size: 2.8rem; color: var(--green); line-height: 1; }
-  .earn-period { font-size: 0.85rem; color: var(--gray-500); margin-top: 4px; }
-  .ref-faq { background: var(--white); padding: 72px 5vw; }
-  .faq-list { max-width: 680px; margin: 0 auto; }
-  .faq-item { border-bottom: 1px solid var(--gray-100); padding: 22px 0; cursor: pointer; }
-  .faq-q { font-weight: 600; font-size: 1rem; color: var(--heading); display: flex; justify-content: space-between; align-items: center; user-select: none; }
-  .faq-q .arrow { font-size: 0.9rem; color: var(--green); transition: transform 0.2s; }
-  .faq-a { font-size: 0.93rem; color: var(--gray-500); margin-top: 10px; line-height: 1.65; display: none; }
-  .faq-item.open .faq-a { display: block; }
-  .faq-item.open .arrow { transform: rotate(180deg); }
-  .ref-cta { background: var(--dark); padding: 80px 5vw; text-align: center; }
-  .ref-cta h2 { color: #fff; margin-bottom: 12px; }
-  .ref-cta p { color: rgba(255,255,255,0.55); margin-bottom: 36px; }
-
-  /* MODAL */
-  .modal-overlay { display: none; position: fixed; inset: 0; z-index: 500; background: rgba(10,20,8,0.72); backdrop-filter: blur(6px); align-items: flex-end; justify-content: center; padding: 0; overflow-y: auto; }
-  @media (min-width: 600px) { .modal-overlay { align-items: center; padding: 20px; } }
-  .modal-overlay.active { display: flex; }
-  .modal-box { background: var(--white); border-radius: 20px 20px 0 0; width: 100%; max-width: 480px; max-height: 100vh; overflow-y: auto; -webkit-overflow-scrolling: touch; box-shadow: 0 -8px 40px rgba(0,0,0,0.35); animation: modalUp 0.3s cubic-bezier(0.34,1.2,0.64,1) both; }
-  @media (min-width: 600px) { .modal-box { border-radius: 20px; max-height: 90vh; animation: modalIn 0.28s cubic-bezier(0.34,1.56,0.64,1) both; } }
-  @keyframes modalUp { from { opacity: 0; transform: translateY(60px); } to { opacity: 1; transform: translateY(0); } }
-  @keyframes modalIn { from { opacity: 0; transform: scale(0.88) translateY(24px); } to { opacity: 1; transform: scale(1) translateY(0); } }
-  .modal-header { background: linear-gradient(135deg, var(--dark) 0%, #1e3a16 100%); padding: 14px 20px 12px; position: relative; }
-  @media (min-width: 600px) { .modal-header { padding: 32px 36px 28px; } }
-  .modal-header .modal-plan-badge { display: none; }
-  @media (min-width: 600px) { .modal-header .modal-plan-badge { display: inline-block; background: rgba(77,184,64,0.22); border: 1px solid rgba(77,184,64,0.45); color: #a8eea0; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; margin-bottom: 8px; } }
-  .modal-header h3 { font-family: var(--font-head); font-weight: 900; font-size: 1.2rem; color: #fff; line-height: 1.1; margin-bottom: 2px; }
-  @media (min-width: 600px) { .modal-header h3 { font-size: 1.8rem; margin-bottom: 6px; } }
-  .modal-header p { display: none; }
-  @media (min-width: 600px) { .modal-header p { display: block; color: rgba(255,255,255,0.55); font-size: 0.9rem; } }
-  .modal-price { font-family: var(--font-head); font-weight: 900; font-size: 1.6rem; color: var(--green-glow); line-height: 1; margin-top: 2px; }
-  @media (min-width: 600px) { .modal-price { font-size: 2.6rem; margin-top: 8px; } }
-  .modal-price span { font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.45); }
-  .modal-close { position: absolute; top: 12px; right: 14px; background: rgba(255,255,255,0.1); border: none; color: rgba(255,255,255,0.6); width: 32px; height: 32px; border-radius: 50%; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
-  .modal-close:hover { background: rgba(255,255,255,0.2); color: #fff; }
-  .modal-body { padding: 16px 20px 24px; }
-  @media (min-width: 600px) { .modal-body { padding: 32px 36px 36px; } }
-  .modal-step-indicator { display: flex; gap: 6px; margin-bottom: 14px; }
-  .modal-step-dot { height: 4px; border-radius: 2px; flex: 1; background: var(--gray-100); transition: background 0.3s; }
-  .modal-step-dot.active { background: var(--green); }
-  .modal-step-dot.done { background: var(--green-light); }
-  .modal-step { display: none; }
-  .modal-step.active { display: block; }
-  .form-label { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 4px; }
-  @media (min-width: 600px) { .form-label { font-size: 0.82rem; margin-bottom: 8px; } }
-  .form-input { width: 100%; padding: 10px 12px; border: 1.5px solid var(--gray-200); border-radius: 10px; font-family: var(--font-body); font-size: 1rem; color: var(--heading); background: var(--white); transition: border-color 0.2s, box-shadow 0.2s; outline: none; margin-bottom: 10px; }
-  @media (min-width: 600px) { .form-input { padding: 13px 16px; margin-bottom: 20px; } }
-  .form-input:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(45,122,34,0.12); }
-  .form-input::placeholder { color: rgba(255,255,255,0.3); }
-  .form-input.error { border-color: #ff6b6b; }
-  .form-error { color: #ff6b6b; font-size: 0.75rem; margin-top: -6px; margin-bottom: 8px; display: none; }
-  .form-error.visible { display: block; }
-  .form-hint { font-size: 0.75rem; color: var(--gray-500); margin-top: -6px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 4px; line-height: 1.4; }
-  .form-hint::before { content: 'ℹ'; font-size: 0.72rem; color: var(--green); flex-shrink: 0; margin-top: 1px; }
-  .plan-selector { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 10px; }
-  @media (max-width: 400px) { .plan-selector { grid-template-columns: 1fr; } }
-  .plan-option { border: 2px solid var(--gray-200); border-radius: 10px; padding: 10px 8px; cursor: pointer; transition: border-color 0.2s, background 0.2s; text-align: center; position: relative; }
-  .plan-option:hover { border-color: var(--green); background: var(--green-pale); }
-  .plan-option.selected { border-color: var(--green); background: var(--green-pale); }
-  .plan-option.selected::after { content: '✓'; position: absolute; top: 5px; right: 7px; color: var(--green); font-weight: 700; font-size: 0.8rem; }
-  .plan-option-price { font-family: var(--font-head); font-weight: 900; font-size: 1.3rem; color: var(--heading); }
-  .plan-option-label { font-size: 0.65rem; color: var(--gray-500); font-weight: 600; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.03em; }
-  .plan-option-desc { font-size: 0.62rem; color: var(--gray-500); margin-top: 3px; line-height: 1.35; }
-  .modal-btn-row { display: flex; gap: 8px; margin-top: 12px; padding-bottom: env(safe-area-inset-bottom, 8px); }
-  .modal-btn-back { background: var(--gray-100); color: var(--gray-700); border: none; padding: 16px; border-radius: 10px; font-family: var(--font-body); font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: background 0.2s; min-height: 54px; }
-  .modal-btn-back:hover { background: var(--gray-200); }
-  .modal-btn-next { flex: 1; background: linear-gradient(135deg, var(--green-light) 0%, var(--green) 100%); color: #fff; border: none; padding: 16px 20px; border-radius: 10px; font-family: var(--font-head); font-weight: 800; font-size: 1.05rem; letter-spacing: 0.04em; cursor: pointer; box-shadow: 0 4px 16px rgba(45,122,34,0.35); transition: transform 0.15s, box-shadow 0.15s; min-height: 54px; }
-  .modal-btn-next:hover { transform: translateY(-1px); box-shadow: 0 6px 22px rgba(45,122,34,0.45); }
-  .modal-btn-next:active { transform: scale(0.98); }
-  .modal-btn-next:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-  .confirm-summary { background: var(--green-pale); border-radius: 12px; padding: 16px; margin-bottom: 14px; border: 1px solid rgba(77,184,64,0.25); }
-  .confirm-row { display: flex; justify-content: space-between; align-items: flex-start; font-size: 0.88rem; padding: 5px 0; border-bottom: 1px solid rgba(77,184,64,0.18); gap: 10px; }
-  .confirm-row:last-child { border-bottom: none; }
-  .confirm-label { color: var(--gray-500); flex-shrink: 0; }
-  .confirm-value { font-weight: 600; color: var(--heading); text-align: right; }
-  .confirm-price { color: var(--green); font-family: var(--font-head); font-weight: 900; font-size: 1.1rem; }
-  .modal-trust { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--gray-100); }
-  .modal-trust-item { font-size: 0.75rem; color: var(--gray-500); display: flex; align-items: center; gap: 4px; }
-  .modal-trust-item::before { content: '🔒'; font-size: 0.7rem; }
-
-  @media (max-width: 768px) { section { padding: 56px 4vw; } }
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
-  .hero-content > * { animation: fadeUp 0.7s ease both; }
-  .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
-  .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
-  .hero-content > *:nth-child(3) { animation-delay: 0.32s; }
-  .hero-content > *:nth-child(4) { animation-delay: 0.42s; }
-  .hero-content > *:nth-child(5) { animation-delay: 0.52s; }
-
-  /* ===== DEPTH / MOTION LAYER ===== */
-  .reveal { opacity: 0; transform: perspective(1000px) translateY(56px) rotateX(18deg) scale(0.94); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1); transform-origin: bottom center; }
-  .reveal.in-view { opacity: 1; transform: perspective(1000px) translateY(0) rotateX(0deg) scale(1); }
-  .steps-grid .reveal:nth-child(2), .why-grid .reveal:nth-child(2), .pricing-grid .reveal:nth-child(2), .area-grid .reveal:nth-child(2), .ref-steps-grid .reveal:nth-child(2), .earnings-grid .reveal:nth-child(2) { transition-delay: 0.1s; }
-  .steps-grid .reveal:nth-child(3), .why-grid .reveal:nth-child(3), .pricing-grid .reveal:nth-child(3), .area-grid .reveal:nth-child(3), .earnings-grid .reveal:nth-child(3) { transition-delay: 0.2s; }
-  .area-grid .reveal:nth-child(4), .earnings-grid .reveal:nth-child(4) { transition-delay: 0.3s; }
-  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1 !important; transform: none !important; transition: none !important; } }
-
-  .tilt-card { transform-style: preserve-3d; will-change: transform; transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease; }
-  .tilt-card.tilting { box-shadow: 0 26px 48px -12px rgba(45,122,34,0.45), 0 0 0 1px rgba(77,184,64,0.25); }
-
-  nav { transition: box-shadow 0.3s ease; }
-  nav.scrolled { box-shadow: 0 8px 32px rgba(20,40,15,0.14); }
-
-  .hero-bg { will-change: transform; transition: transform 0.05s linear; }
-  .hero-orb { position: absolute; border-radius: 50%; filter: blur(70px); pointer-events: none; opacity: 0.85; z-index: 0; mix-blend-mode: screen; }
-  .hero-orb-1 { width: 560px; height: 560px; background: radial-gradient(circle, rgba(120,230,90,0.75) 0%, rgba(120,230,90,0) 68%); top: -14%; left: -10%; animation: driftA 14s ease-in-out infinite; }
-  .hero-orb-2 { width: 460px; height: 460px; background: radial-gradient(circle, rgba(77,184,64,0.7) 0%, rgba(77,184,64,0) 68%); bottom: -6%; right: -8%; animation: driftB 18s ease-in-out infinite; }
-  .hero-orb-3 { width: 320px; height: 320px; background: radial-gradient(circle, rgba(200,255,150,0.55) 0%, rgba(200,255,150,0) 70%); top: 30%; left: 55%; animation: driftC 12s ease-in-out infinite; }
-  @keyframes driftA { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(60px,40px) scale(1.18); } }
-  @keyframes driftB { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-50px,-34px) scale(1.15); } }
-  @keyframes driftC { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-40px,30px) scale(1.25); } }
-  @media (prefers-reduced-motion: reduce) { .hero-orb { animation: none !important; } .hero-bg { transition: none !important; } }
-
-  .spotlight { position: absolute; inset: 0; z-index: 2; pointer-events: none; background: radial-gradient(520px circle at var(--mx,50%) var(--my,40%), rgba(168,238,160,0.16), transparent 60%); }
-  .hero-content, .hero-trust { position: relative; z-index: 3; }
-
-  .hero-wave { position: absolute; left: 0; right: 0; bottom: -1px; line-height: 0; z-index: 2; pointer-events: none; }
-  .hero-wave svg { display: block; width: 100%; height: 72px; }
-
-  #how, #why { position: relative; overflow: hidden; }
-  #how::before, #why::before { content: ''; position: absolute; inset: -20%; background:
-      radial-gradient(560px circle at 30% 32%, rgba(77,184,64,0.14), transparent 62%),
-      radial-gradient(480px circle at 75% 64%, rgba(120,230,90,0.12), transparent 60%),
-      radial-gradient(420px circle at 55% 88%, rgba(45,122,34,0.10), transparent 60%);
-    background-repeat: no-repeat; pointer-events: none; z-index: 0; will-change: transform;
-    animation: ambientDrift 34s ease-in-out infinite alternate; }
-  @keyframes ambientDrift {
-    0% { transform: translate3d(0,0,0) scale(1); }
-    100% { transform: translate3d(1.5%,2%,0) scale(1.05); }
+  /* Pricing */
+  .price-table { margin-top: 36px; border: 2px solid var(--ink); border-radius: 10px; overflow: hidden; background: var(--paper); }
+  .price-row { display: grid; grid-template-columns: 1.4fr 1fr auto; gap: 20px; align-items: center; padding: 24px 28px; border-top: 1px solid var(--line); }
+  .price-row:first-child { border-top: none; }
+  .price-row.featured { background: #FFF8E2; }
+  .price-row h3 { margin-bottom: 2px; }
+  .price-row .who { color: var(--ink-soft); }
+  .price-tag { font-family: var(--head); font-weight: 900; font-size: 2.8rem; line-height: 1; }
+  .price-tag small { font-family: var(--body); font-weight: 500; font-size: 0.95rem; color: var(--ink-soft); display: block; margin-top: 4px; }
+  .price-tag.custom { font-size: 2rem; }
+  .price-row .btn { white-space: nowrap; }
+  @media (max-width: 760px) {
+    .price-row { grid-template-columns: 1fr auto; padding: 20px; }
+    .price-row .btn { grid-column: 1 / -1; width: 100%; }
   }
-  @media (prefers-reduced-motion: reduce) { #how::before, #why::before { animation: none; } }
-  #how .section-inner, #why .section-inner { position: relative; z-index: 1; }
+  .included { margin-top: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px 24px; list-style: none; }
+  .included li { display: flex; gap: 10px; align-items: flex-start; }
+  .included svg { color: var(--turf); flex-shrink: 0; margin-top: 4px; }
+  .fine { margin-top: 26px; font-size: 0.92rem; color: var(--ink-soft); max-width: 75ch; }
+  .fine p + p { margin-top: 8px; }
 
-  .price-card.featured { position: relative; }
-  .price-card.featured::before { content: ''; position: absolute; inset: -2px; border-radius: 18px; padding: 2px; background: conic-gradient(from var(--glow-angle,0deg), var(--green-glow), #d6ffb8 25%, var(--green-glow) 50%, transparent 75%, var(--green-glow)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: spinGlow 4s linear infinite; z-index: -1; }
-  .price-card.featured { animation: featuredPulse 3s ease-in-out infinite; }
-  @property --glow-angle { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
-  @keyframes spinGlow { to { --glow-angle: 360deg; } }
-  @keyframes featuredPulse { 0%,100% { box-shadow: 0 0 0 1px var(--green-glow), 0 12px 40px rgba(77,184,64,0.2); } 50% { box-shadow: 0 0 0 1px var(--green-glow), 0 16px 60px rgba(77,184,64,0.45); } }
-  @media (prefers-reduced-motion: reduce) { .price-card.featured::before, .price-card.featured { animation: none; } }
+  /* Compare */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 36px; border: 2px solid var(--ink); border-radius: 10px; overflow: hidden; }
+  @media (max-width: 760px) { .compare { grid-template-columns: 1fr; } }
+  .compare > div { padding: 26px 28px; }
+  .compare .them { background: var(--paper); }
+  .compare .us { background: var(--turf); color: #fff; }
+  .compare h3 { margin-bottom: 14px; }
+  .compare ul { list-style: none; }
+  .compare li { padding: 10px 0; border-top: 1px solid var(--line); display: flex; gap: 10px; }
+  .compare .us li { border-top-color: rgba(255,255,255,0.22); }
+  .compare li:first-child { border-top: none; }
+  .compare .them svg { color: #9AA39B; flex-shrink: 0; margin-top: 4px; }
+  .compare .us svg { color: var(--sun); flex-shrink: 0; margin-top: 4px; }
+
+  /* Promise */
+  .promise { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  @media (max-width: 860px) { .promise { grid-template-columns: 1fr; gap: 28px; } }
+  .promise-card { border-left: 6px solid var(--sun); padding: 6px 0 6px 22px; }
+  .promise-card p { color: var(--ink-soft); }
+  .promise-card + .promise-card { margin-top: 26px; }
+
+  /* FAQ */
+  .faq { margin-top: 32px; max-width: 820px; }
+  .faq details { border-top: 1px solid var(--line); }
+  .faq details:last-child { border-bottom: 1px solid var(--line); }
+  .faq summary { cursor: pointer; list-style: none; padding: 18px 40px 18px 0; position: relative; font-weight: 700; font-size: 1.08rem; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: '+'; position: absolute; right: 6px; top: 12px; font-family: var(--head); font-size: 1.8rem; color: var(--turf); }
+  .faq details[open] summary::after { content: '\2212'; }
+  .faq details p { padding: 0 0 18px; color: var(--ink-soft); max-width: 70ch; }
+
+  /* Final CTA */
+  .final { background: repeating-linear-gradient(100deg, var(--turf) 0 110px, var(--clipping) 110px 220px); color: #fff; padding: 72px 0; }
+  .final h2 { font-size: clamp(2.4rem, 5vw, 3.8rem); }
+  .final p { font-size: 1.15rem; color: #F4FAF0; margin-bottom: 26px; max-width: 46ch; }
+  .final .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+  .final .btn-ghost { color: #fff; border-color: #fff; }
+  .final .btn-ghost:hover { background: rgba(255,255,255,0.12); }
+
+  /* Footer */
+  footer.site { background: var(--ink); color: #CFD8CB; padding: 40px 0 110px; font-size: 0.94rem; }
+  footer.site .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; }
+  footer.site a { color: #fff; }
+  footer.site .small { color: #9DA89A; font-size: 0.85rem; margin-top: 6px; }
+  footer.site nav { display: flex; flex-direction: column; gap: 6px; }
+  @media (min-width: 761px) { footer.site { padding-bottom: 40px; } }
+
+  /* Mobile sticky bar */
+  .mobile-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; display: none; gap: 10px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: var(--paper); border-top: 1px solid var(--line); box-shadow: 0 -4px 16px rgba(0,0,0,0.08); }
+  .mobile-bar .btn { flex: 1; font-size: 1.1rem; padding: 10px 12px; min-height: 48px; }
+  .mobile-bar .btn-ghost { flex: 0 0 auto; }
+  @media (max-width: 760px) { .mobile-bar { display: flex; } }
+
+  /* Referral page */
+  #page-referral { display: none; }
+  .ref-hero { background: var(--sage); padding: 64px 0 56px; border-bottom: 1px solid var(--line); }
+  .ref-hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); margin-bottom: 14px; }
+  .ref-stats { display: flex; flex-wrap: wrap; gap: 14px 40px; margin-top: 28px; }
+  .ref-stat strong { display: block; font-family: var(--head); font-weight: 900; font-size: 2.6rem; line-height: 1; color: var(--turf); }
+  .ref-stat span { color: var(--ink-soft); font-size: 0.95rem; }
+  .ref-link { margin-top: 28px; background: var(--paper); border: 2px dashed var(--turf); border-radius: 10px; padding: 16px 18px; max-width: 560px; }
+  .ref-link code { font-family: var(--body); font-weight: 700; color: var(--turf); word-break: break-all; }
+  .calc { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; border: 2px solid var(--ink); border-radius: 10px; padding: 28px; max-width: 760px; background: var(--paper); }
+  @media (max-width: 640px) { .calc { grid-template-columns: 1fr; padding: 20px; } }
+  .calc label { font-weight: 700; display: block; margin-bottom: 10px; }
+  .calc .count { font-family: var(--head); font-weight: 900; font-size: 3rem; line-height: 1; }
+  .calc input[type=range] { width: 100%; accent-color: var(--turf); margin-top: 12px; }
+  .calc .result strong { display: block; font-family: var(--head); font-weight: 900; font-size: 3.6rem; color: var(--turf); line-height: 1; }
+  .calc .note { margin-top: 10px; font-size: 0.92rem; color: var(--ink-soft); }
+
+  /* Modal */
+  .modal { position: fixed; inset: 0; z-index: 100; display: none; align-items: flex-end; justify-content: center; background: rgba(15,30,15,0.55); }
+  .modal.open { display: flex; }
+  @media (min-width: 640px) { .modal { align-items: center; padding: 20px; } }
+  .sheet { background: var(--paper); width: 100%; max-width: 500px; max-height: 94vh; overflow-y: auto; border-radius: 16px 16px 0 0; animation: rise 0.25s ease-out both; }
+  @media (min-width: 640px) { .sheet { border-radius: 14px; } }
+  @keyframes rise { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .sheet { animation: none; } }
+  .sheet-head { background: repeating-linear-gradient(100deg, var(--turf) 0 70px, var(--clipping) 70px 140px); color: #fff; padding: 20px 24px; position: relative; }
+  .sheet-head h2 { font-size: 2rem; margin-bottom: 2px; }
+  .sheet-head p { color: #F4FAF0; font-size: 0.98rem; }
+  .sheet-close { position: absolute; top: 12px; right: 12px; width: 40px; height: 40px; border-radius: 50%; border: none; background: rgba(255,255,255,0.18); color: #fff; font-size: 1.3rem; cursor: pointer; }
+  .sheet-close:hover { background: rgba(255,255,255,0.3); }
+  .progress { display: flex; gap: 6px; padding: 16px 24px 0; }
+  .progress span { flex: 1; height: 5px; border-radius: 3px; background: var(--line); }
+  .progress span.on { background: var(--turf); }
+  .sheet-body { padding: 18px 24px 26px; }
+  .step { display: none; }
+  .step.on { display: block; }
+  .step-title { font-family: var(--head); font-weight: 800; font-size: 1.5rem; margin-bottom: 14px; }
+  .field { margin-bottom: 16px; }
+  .field label { display: block; font-weight: 700; font-size: 0.98rem; margin-bottom: 6px; }
+  .field label .opt { font-weight: 400; color: var(--ink-soft); }
+  .field input, .field select, .field textarea { width: 100%; font: inherit; font-size: 1.05rem; padding: 12px 14px; border: 2px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--turf); outline: none; }
+  .field input.err, .field textarea.err { border-color: var(--error); }
+  .field .hint { font-size: 0.88rem; color: var(--ink-soft); margin-top: 5px; }
+  .field .msg { font-size: 0.88rem; color: var(--error); margin-top: 5px; display: none; }
+  .field .msg.show { display: block; }
+  .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  @media (max-width: 420px) { .plans { grid-template-columns: 1fr; } }
+  .plan { border: 2px solid var(--line); border-radius: 8px; padding: 12px 8px; text-align: center; cursor: pointer; background: var(--paper); font: inherit; color: var(--ink); }
+  .plan:hover { border-color: var(--turf); }
+  .plan[aria-pressed="true"] { border-color: var(--turf); background: var(--sage); box-shadow: inset 0 0 0 1px var(--turf); }
+  .plan b { display: block; font-family: var(--head); font-weight: 900; font-size: 1.6rem; line-height: 1.1; }
+  .plan span { display: block; font-size: 0.85rem; color: var(--ink-soft); }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .review { background: var(--sage); border-radius: 10px; padding: 14px 16px; margin-bottom: 14px; }
+  .review div { display: flex; justify-content: space-between; gap: 14px; padding: 6px 0; border-top: 1px solid var(--line); font-size: 0.96rem; }
+  .review div:first-child { border-top: none; }
+  .review dt { color: var(--ink-soft); }
+  .review dd { font-weight: 700; text-align: right; }
+  .note-box { font-size: 0.9rem; color: var(--ink-soft); margin-bottom: 14px; }
+  .note-box p + p { margin-top: 8px; }
+  .consent { font-size: 0.82rem; color: var(--ink-soft); margin-top: 4px; }
+  .row-btns { display: flex; gap: 10px; margin-top: 8px; }
+  .row-btns .btn-ghost { flex: 0 0 auto; }
+  .row-btns .btn-turf, .row-btns .btn-sun { flex: 1; }
+  .done { text-align: center; padding: 10px 0 6px; }
+  .done svg { margin: 0 auto 12px; color: var(--turf); }
+  .done p { color: var(--ink-soft); margin-bottom: 18px; }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"Yard Steady","url":"https://yardsteady.com/","telephone":"+1-832-798-4827","areaServed":["Pearland TX","Manvel TX","Friendswood TX"],"description":"Reliable weekly lawn care with simple pricing, auto-billing, no contracts, and a 7-day re-mow guarantee. Expanding soon to League City, Alvin, and Clear Lake.","priceRange":"$45-$60 per week"}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Yard Steady","url":"https://yardsteady.com/","telephone":"+1-832-798-4827","email":"blambinvestmentsllc@gmail.com","areaServed":["Pearland TX","Manvel TX","Friendswood TX"],"description":"Weekly lawn mowing with set pricing, auto-billing, no contracts and a 7-day re-mow guarantee. First mow $20 when starting a weekly plan.","priceRange":"$40-$55 per week"}
 </script>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a1f18'/%3E%3Ctext x='32' y='42' font-family='Arial,Helvetica,sans-serif' font-weight='900' font-size='26' fill='%234db840' text-anchor='middle'%3EYS%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232D6A2E'/%3E%3Cpath d='M0 64 L22 0 H36 L14 64Z' fill='%233A7D39'/%3E%3Cpath d='M28 64 L50 0 H64 V8 L44 64Z' fill='%233A7D39'/%3E%3Ctext x='32' y='43' font-family='Arial,Helvetica,sans-serif' font-weight='900' font-size='26' fill='%23ffffff' text-anchor='middle'%3EYS%3C/text%3E%3C/svg%3E">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="shortcut icon" href="favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 </head>
 <body>
 
-<!-- SIGNUP MODAL -->
-<div class="modal-overlay" id="signupModal" onclick="handleModalOverlayClick(event)">
-  <div class="modal-box" id="modalBox">
-    <div class="modal-header">
-      <div class="modal-plan-badge" id="modalPlanBadge">Weekly Service</div>
-      <h3 id="modalHeadline">Let's Get Your Lawn Sorted.</h3>
-      <p id="modalSubline">Takes 60 seconds. No commitment required.</p>
-      <div class="modal-price" id="modalPriceDisplay">$45 <span>/ week + tax</span></div>
-      <button class="modal-close" onclick="closeModal()">✕</button>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-x" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="site">
+  <div class="wrap">
+    <a href="#" class="logo" onclick="showPage('home'); return false;" aria-label="Yard Steady home">
+      <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#2D6A2E"/><path d="M0 64 L22 0 H36 L14 64Z" fill="#3A7D39"/><path d="M28 64 L50 0 H64 V8 L44 64Z" fill="#3A7D39"/></svg>
+      Yard Steady
+    </a>
+    <nav class="header-links" aria-label="Main">
+      <a href="#pricing" class="hide-sm" onclick="showPage('home')">Prices</a>
+      <a href="#faq" class="hide-sm" onclick="showPage('home')">Questions</a>
+      <a href="#" class="hide-sm" onclick="showPage('referral'); return false;">Referrals</a>
+      <a href="sms:+18327984827" class="header-phone"><span class="hide-sm">Text (832) 798-4827</span><span class="show-sm">Text us</span></a>
+      <button type="button" class="btn btn-sun" onclick="openModal('small','header')">Get my $20 mow</button>
+    </nav>
+  </div>
+</header>
+
+<main id="page-home">
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="hero-area">Pearland, Manvel and Friendswood</p>
+        <h1>Your lawn, mowed every week.</h1>
+        <p class="hero-sub">First mow $20, then $40 a week plus tax. No contract, and you can cancel with one text.</p>
+        <form class="zip-form" onsubmit="checkZip(event)" novalidate>
+          <label for="zipInput">Enter your zip code to get started</label>
+          <div class="zip-row">
+            <input type="text" id="zipInput" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="77584" aria-describedby="zipMsg">
+            <button type="submit" class="btn btn-sun">Get my $20 first mow</button>
+          </div>
+          <p class="zip-msg" id="zipMsg" role="status"></p>
+          <p class="zip-help">Questions first? <a href="sms:+18327984827">Text us at (832) 798-4827</a></p>
+        </form>
+      </div>
+      <div class="sign-holder" aria-hidden="true">
+        <div class="sign">
+          <div class="sign-top">Yard Steady</div>
+          <div class="sign-price"><sup>$</sup>20</div>
+          <div class="sign-what">first mow</div>
+          <div class="sign-rule"></div>
+          <div class="sign-then">then <strong>$40</strong> a week</div>
+          <div class="sign-phone">832-798-4827</div>
+        </div>
+      </div>
     </div>
-    <div class="modal-body">
-      <div class="modal-step-indicator">
-        <div class="modal-step-dot active" id="dot1"></div>
-        <div class="modal-step-dot" id="dot2"></div>
-        <div class="modal-step-dot" id="dot3"></div>
-      </div>
+  </section>
 
-      <!-- Step 1 -->
-      <div class="modal-step active" id="step1">
-        <label class="form-label">Your Name</label>
-        <input type="text" class="form-input" id="fieldName" placeholder="First &amp; Last Name" autocomplete="name">
-        <div class="form-error" id="errName">Please enter your name.</div>
-        <label class="form-label">Email Address</label>
-        <input type="email" class="form-input" id="fieldEmail" placeholder="you@email.com" autocomplete="email">
-        <div class="form-error" id="errEmail">Please enter a valid email.</div>
-        <label class="form-label">Mobile Phone</label>
-        <input type="tel" class="form-input" id="fieldPhone" placeholder="(555) 000-0000" autocomplete="tel" style="margin-bottom:4px;">
-        <div class="form-error" id="errPhone">Please enter a valid phone number.</div>
-        <div class="form-hint">We'll only text you — no calls, no spam.</div>
-        <div class="modal-btn-row">
-          <button class="modal-btn-next" style="width:100%;" onclick="goStep(2)">Continue →</button>
-        </div>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="modal-step" id="step2">
-        <label class="form-label">What Best Describes Your Property?</label>
-        <div class="plan-selector">
-          <div class="plan-option selected" id="planSmall" onclick="selectPlan('small')">
-            <div class="plan-option-price">$45</div>
-            <div class="plan-option-label">Standard</div>
-            <div class="plan-option-desc">Typical subdivision yard</div>
-          </div>
-          <div class="plan-option" id="planLarge" onclick="selectPlan('large')">
-            <div class="plan-option-price">$60</div>
-            <div class="plan-option-label">Large</div>
-            <div class="plan-option-desc">Corner lot or bigger property</div>
-          </div>
-          <div class="plan-option" id="planCustom" onclick="switchToCustom()">
-            <div class="plan-option-price" style="font-size:1.1rem;">Custom</div>
-            <div class="plan-option-label">Extra-Large</div>
-            <div class="plan-option-desc">Acreage or not sure</div>
-          </div>
-        </div>
-        <p style="font-size:0.72rem; color:var(--gray-500); margin-top:-4px; margin-bottom:10px; line-height:1.4;">No measuring needed — we verify all pricing by satellite before your first mow.</p>
-        <label class="form-label">Service Address</label>
-        <input type="text" class="form-input" id="fieldAddress" placeholder="123 Maple St, Pearland TX" autocomplete="street-address">
-        <div class="form-error" id="errAddress">Please enter your service address.</div>
-        <label class="form-label">Referral Code <span style="font-weight:400; text-transform:none; color:var(--gray-500);">(optional)</span></label>
-        <input type="text" class="form-input" id="fieldReferrer" placeholder="e.g. Brad3314">
-        <div class="form-hint">Their first name + house number — ask them, or use the link they sent you.</div>
-        <label class="form-label">Preferred First Mow Date</label>
-        <input type="date" class="form-input" id="fieldDate" style="margin-bottom:4px;">
-        <div class="form-error" id="errDate">Please select a date at least 72 hours from today.</div>
-        <div class="form-hint">Requires 72 hours notice. Exact day not guaranteed — service within a 1–3 day window based on routing.</div>
-        <div class="modal-btn-row">
-          <button class="modal-btn-back" onclick="goStep(1)">← Back</button>
-          <button class="modal-btn-next" onclick="goStep(3)">Review &amp; Continue →</button>
-        </div>
-      </div>
-
-      <!-- Step 2C Custom -->
-      <div class="modal-step" id="step2c">
-        <div style="background:rgba(77,184,64,0.12); border:1px solid rgba(77,184,64,0.3); border-radius:10px; padding:12px 14px; margin-bottom:14px; font-size:0.85rem; color:var(--gray-700); line-height:1.6;">
-          🌿 We'll review your property by satellite and confirm pricing within <strong>48 hours</strong>. No payment required.
-        </div>
-        <label class="form-label">Service Address</label>
-        <input type="text" class="form-input" id="fieldAddressCustom" placeholder="123 Maple St, Pearland TX" autocomplete="street-address">
-        <div class="form-error" id="errAddressCustom">Please enter your service address.</div>
-        <label class="form-label">Referral Code <span style="font-weight:400; text-transform:none; color:var(--gray-500);">(optional)</span></label>
-        <input type="text" class="form-input" id="fieldReferrerCustom" placeholder="e.g. Brad3314">
-        <div class="form-hint">Their first name + house number — ask them, or use the link they sent you.</div>
-        <label class="form-label">Anything Else? <span style="font-weight:400; text-transform:none; color:var(--gray-500);">(optional)</span></label>
-        <textarea class="form-input" id="fieldNotes" placeholder="Gate code, dogs, slope, preferred day..." rows="3" style="resize:vertical; font-family:var(--font-body);"></textarea>
-        <div class="modal-btn-row">
-          <button class="modal-btn-back" onclick="goStep(1)">← Back</button>
-          <button class="modal-btn-next" onclick="goStepCustom(3)">Review &amp; Submit →</button>
-        </div>
-      </div>
-
-      <!-- Step 3 Confirm -->
-      <div class="modal-step" id="step3">
-        <div class="confirm-summary">
-          <div class="confirm-row"><span class="confirm-label">Name</span><span class="confirm-value" id="cName">—</span></div>
-          <div class="confirm-row"><span class="confirm-label">Email</span><span class="confirm-value" id="cEmail">—</span></div>
-          <div class="confirm-row"><span class="confirm-label">Phone</span><span class="confirm-value" id="cPhone">—</span></div>
-          <div class="confirm-row"><span class="confirm-label">Address</span><span class="confirm-value" id="cAddress">—</span></div>
-          <div class="confirm-row" id="cReferrerRow" style="display:none;"><span class="confirm-label">Referred By</span><span class="confirm-value" id="cReferrer">—</span></div>
-          <div class="confirm-row"><span class="confirm-label">Start Date</span><span class="confirm-value" id="cDate">—</span></div>
-          <div class="confirm-row"><span class="confirm-label">Plan</span><span class="confirm-price" id="cPlan">$45/week + tax</span></div>
-        </div>
-        <p style="font-size:0.78rem;color:var(--gray-500);margin-bottom:10px;line-height:1.55;">Submit your info and we'll text/email you a secure Stripe payment link to set up your weekly subscription. <strong style="color:var(--heading);">Nothing is charged until you complete that step.</strong></p>
-        <div style="background:rgba(245,215,110,0.12); border:1px solid rgba(245,215,110,0.4); border-radius:10px; padding:10px 12px; margin-bottom:12px; font-size:0.78rem; color:#f0d878; line-height:1.5; display:flex; gap:7px;">
-          <span style="flex-shrink:0;">⚠️</span>
-          <span><strong>First mow note:</strong> If grass is over 9 inches tall, a one-time overgrowth fee (50–100% of weekly rate) may apply. We'll always notify you first.</span>
-        </div>
-        <div class="modal-btn-row">
-          <button class="modal-btn-back" onclick="goStep(2)">← Back</button>
-          <button class="modal-btn-next" onclick="submitStandardRequest()">Submit My Info →</button>
-        </div>
-        <div class="modal-trust">
-          <span class="modal-trust-item">We respond within 48 hours</span>
-          <span class="modal-trust-item">Cancel by text anytime</span>
-          <span class="modal-trust-item">7-day re-mow guarantee</span>
-        </div>
-      </div>
-
-      <!-- Step 3C Custom Confirm -->
-      <div class="modal-step" id="step3c">
-        <div class="confirm-summary">
-          <div class="confirm-row"><span class="confirm-label">Name</span><span class="confirm-value" id="ccName">—</span></div>
-          <div class="confirm-row"><span class="confirm-label">Email</span><span class="confirm-value" id="ccEmail">—</span></div>
-          <div class="confirm-row"><span class="confirm-label">Phone</span><span class="confirm-value" id="ccPhone">—</span></div>
-          <div class="confirm-row"><span class="confirm-label">Address</span><span class="confirm-value" id="ccAddress">—</span></div>
-          <div class="confirm-row" id="ccReferrerRow" style="display:none;"><span class="confirm-label">Referred By</span><span class="confirm-value" id="ccReferrer">—</span></div>
-          <div class="confirm-row"><span class="confirm-label">Notes</span><span class="confirm-value" id="ccNotes">—</span></div>
-        </div>
-        <p style="font-size:0.82rem;color:var(--gray-500);margin-bottom:14px;line-height:1.55;">We'll confirm pricing within <strong style="color:var(--heading);">48 hours</strong>. No payment required.</p>
-        <div class="modal-btn-row">
-          <button class="modal-btn-back" onclick="showCustomStep2()">← Back</button>
-          <button class="modal-btn-next" onclick="submitCustomQuote()">Submit Quote Request →</button>
-        </div>
-      </div>
-
-      <!-- Step 4 Thank You (standard flow) -->
-      <div class="modal-step" id="step4">
-        <div style="text-align:center; padding:12px 0 24px;">
-          <div style="font-size:3rem; margin-bottom:12px;">✅</div>
-          <h3 style="font-family:var(--font-head); font-weight:900; font-size:1.6rem; color:var(--heading); margin-bottom:8px;">We've Got Your Info!</h3>
-          <p style="font-size:0.9rem; color:var(--gray-500); line-height:1.65; margin:0 auto 18px;">We'll text/email a secure Stripe payment link to <strong id="thankYouEmail4" style="color:var(--heading);">your email</strong> and <strong id="thankYouPhone4" style="color:var(--heading);">your phone</strong> within <strong style="color:var(--green);">48 hours</strong> to finish setting up your subscription.</p>
-          <div style="background:var(--green-pale); border-radius:10px; padding:12px 14px; margin-bottom:18px; text-align:left;">
-            <p style="font-size:0.82rem; color:var(--gray-700); margin:0; line-height:1.6;">📍 <strong>Address:</strong> <span id="thankYouAddress4"></span></p>
-          </div>
-          <button class="modal-btn-next" style="width:100%;" onclick="closeModal()">Done ✓</button>
-        </div>
-      </div>
-
-      <!-- Step 4C Thank You -->
-      <div class="modal-step" id="step4c">
-        <div style="text-align:center; padding:12px 0 24px;">
-          <div style="font-size:3rem; margin-bottom:12px;">✅</div>
-          <h3 style="font-family:var(--font-head); font-weight:900; font-size:1.6rem; color:var(--heading); margin-bottom:8px;">We've Got Your Request!</h3>
-          <p style="font-size:0.9rem; color:var(--gray-500); line-height:1.65; margin:0 auto 18px;">We'll review your property and send pricing to <strong id="thankYouEmail" style="color:var(--heading);">your email</strong> and text <strong id="thankYouPhone" style="color:var(--heading);">your phone</strong> within <strong style="color:var(--green);">48 hours</strong>.</p>
-          <div style="background:var(--green-pale); border-radius:10px; padding:12px 14px; margin-bottom:18px; text-align:left;">
-            <p style="font-size:0.82rem; color:var(--gray-700); margin:0; line-height:1.6;">📍 <strong>Address:</strong> <span id="thankYouAddress"></span></p>
-          </div>
-          <button class="modal-btn-next" style="width:100%;" onclick="closeModal()">Done ✓</button>
-        </div>
-      </div>
+  <div class="trust">
+    <div class="wrap">
+      <ul>
+        <li><svg width="18" height="18"><use href="#i-check"/></svg>No contract</li>
+        <li><svg width="18" height="18"><use href="#i-check"/></svg>Cancel with one text</li>
+        <li><svg width="18" height="18"><use href="#i-check"/></svg>7-day re-mow guarantee</li>
+        <li><svg width="18" height="18"><use href="#i-check"/></svg>Locally owned in Pearland</li>
+      </ul>
     </div>
   </div>
-</div>
 
-<!-- NAV -->
-<nav>
-  <a href="#home" class="nav-logo" onclick="showPage('home')">Yard <span style="color:var(--heading);">Steady</span></a>
-  <div class="nav-links">
-    <a href="#how" onclick="showPage('home')">How It Works</a>
-    <a href="#pricing" onclick="showPage('home')">Pricing</a>
-    <a href="#" onclick="showPage('referral'); return false;">Referrals</a>
-    <a href="#" class="btn-nav" onclick="openModal('small'); return false;">Start Service →</a>
-  </div>
-</nav>
-
-<!-- HOME PAGE -->
-<div id="page-home">
-
-  <!-- HERO — centered -->
-  <section id="home" style="padding:0; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;">
-    <div class="hero-bg"></div>
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
-    <div class="hero-orb hero-orb-3"></div>
-    <div class="spotlight" id="heroSpotlight"></div>
-    <div class="hero-content">
-      <div class="hero-badge">Now Serving Pearland · Manvel · Friendswood</div>
-      <h1>Reliable Weekly Lawn Care<br><em>Without the Hassle.</em></h1>
-      <p class="hero-sub">Mow service starting at $45/week + tax. No contracts. Auto-billing. We handle all the scheduling.</p>
-      <p class="hero-referral">Earn $10/month per referral — up to $600/year — while your referral stays active.</p>
-      <div class="cta-group">
-        <a href="#pricing" class="btn-primary" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'}); return false;">Start Service →</a>
-        <a href="#pricing" class="btn-secondary" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'}); return false;">See Pricing</a>
-      </div>
-      <p style="color:rgba(255,255,255,0.65); font-size:0.85rem; margin-top:16px; max-width:480px;">Most customers finish signup in under 60 seconds. No phone calls required.</p>
+  <section class="block" id="how">
+    <div class="wrap">
+      <h2>How signup works</h2>
+      <p class="lede">About a minute online. No phone tag, no estimate visit.</p>
+      <ol class="steps">
+        <li>
+          <h3>Tell us about your yard</h3>
+          <p>Pick standard or large and a start date. We check every yard by satellite before the first mow, so the price you see is the price you pay.</p>
+        </li>
+        <li>
+          <h3>Pay through a secure link</h3>
+          <p>Within 48 hours we text and email you a Stripe payment link. Nothing is charged until you use it.</p>
+        </li>
+        <li>
+          <h3>We mow every week</h3>
+          <p>Mow, trim and blow on a set weekly route. If anything looks off, tell us within 7 days and we re-mow it or refund it.</p>
+        </li>
+      </ol>
     </div>
-    <div class="hero-trust">
-      <div class="trust-item"><span class="trust-icon">✓</span> No contracts</div>
-      <div class="trust-item"><span class="trust-icon">✓</span> Auto-billing via Stripe</div>
-      <div class="trust-item"><span class="trust-icon">✓</span> 7-day re-mow guarantee</div>
-      <div class="trust-item"><span class="trust-icon">✓</span> Cancel anytime — just text</div>
-    </div>
-    <div class="hero-wave"><svg viewBox="0 0 1200 76" preserveAspectRatio="none"><defs><linearGradient id="waveFade" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(4,12,3,0.55)"/><stop offset="35%" stop-color="rgba(4,12,3,0.15)"/><stop offset="100%" stop-color="var(--off-white)" stop-opacity="1"/></linearGradient></defs><path d="M0,0 L1200,0 L1200,32 C 1000,8 800,48 600,24 C 400,0 200,64 0,32 Z" fill="url(#waveFade)"/></svg></div>
   </section>
 
-  <section id="how" style="background:var(--off-white)">
-    <div class="section-inner">
-      <div class="section-tag">Simple Process</div>
-      <h2>Up and Running in Minutes.</h2>
-      <p class="section-sub">Three steps and your lawn is on autopilot. No phone tag, no cash, no chasing.</p>
-      <div class="steps-grid">
-        <div class="step-card tilt-card reveal">
-          <div class="step-num">1</div><div class="step-icon">🏡</div>
-          <h3>Tell Us About Your Yard</h3>
-          <p>Choose the option that best matches your property. We verify all pricing by satellite before your first mow — no surprises.</p>
-          <span class="step-price">Standard yard — $45/wk + tax</span>
-          <span class="step-price" style="margin-top:6px; display:inline-block;">Corner lot / large — $60/wk + tax</span>
-          <span class="step-price" style="margin-top:6px; display:inline-block; background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.5);">Oversized — Custom quote</span>
+  <section class="block alt" id="pricing">
+    <div class="wrap">
+      <h2>Prices</h2>
+      <p class="lede">One weekly price, set before your first mow. Your first mow is $20 on either plan.</p>
+      <div class="price-table">
+        <div class="price-row featured">
+          <div><h3>Standard yard</h3><p class="who">Typical subdivision lot</p></div>
+          <div class="price-tag">$40<small>per week + tax</small></div>
+          <button type="button" class="btn btn-sun" onclick="openModal('small','pricing')">Start for $20</button>
         </div>
-        <div class="step-card tilt-card reveal">
-          <div class="step-num">2</div><div class="step-icon">📅</div>
-          <h3>Pick a Start Date</h3>
-          <p>We schedule based on availability. Most customers get serviced within the first available window after signup.</p>
+        <div class="price-row">
+          <div><h3>Large yard</h3><p class="who">Corner lot or bigger property</p></div>
+          <div class="price-tag">$55<small>per week + tax</small></div>
+          <button type="button" class="btn btn-turf" onclick="openModal('large','pricing')">Start for $20</button>
         </div>
-        <div class="step-card tilt-card reveal">
-          <div class="step-num">3</div><div class="step-icon">✅</div>
-          <h3>Relax — We're On Our Way</h3>
-          <p>Your lawn is mowed every week as scheduled. If anything's off, report within 7 days for a re-mow or a refund.</p>
+        <div class="price-row">
+          <div><h3>Oversized or acreage</h3><p class="who">Not sure which size? Choose this.</p></div>
+          <div class="price-tag custom">Quote<small>within 48 hours</small></div>
+          <button type="button" class="btn btn-ghost" onclick="openModal('custom','pricing')">Request a quote</button>
         </div>
+      </div>
+      <ul class="included" aria-label="Included every week">
+        <li><svg width="18" height="18"><use href="#i-check"/></svg>Mowing every week</li>
+        <li><svg width="18" height="18"><use href="#i-check"/></svg>String trimming around edges</li>
+        <li><svg width="18" height="18"><use href="#i-check"/></svg>Clippings blown off drive and walks</li>
+        <li><svg width="18" height="18"><use href="#i-check"/></svg>Billed automatically through Stripe</li>
+      </ul>
+      <div class="fine">
+        <p>The $20 first mow applies when you start a weekly Standard or Large plan, one per household. All prices plus 8.25% Texas sales tax.</p>
+        <p>If grass is over 9 inches tall on the first visit, a one-time overgrowth fee of 50–100% of the weekly rate may apply. We always tell you before charging it.</p>
+        <p>Service happens within a 1–3 day window based on routing. We may re-quote or decline a property whose size or terrain differs from what was selected at signup.</p>
       </div>
     </div>
   </section>
 
-  <section id="why">
-    <div class="section-inner">
-      <div class="section-tag">Why Yard Steady</div>
-      <h2>Not Just a Guy With a Truck.</h2>
-      <p class="section-sub">We built a system. You get reliability, clear pricing, and real accountability every single week.</p>
-      <div class="why-grid">
-        <div class="why-card tilt-card reveal"><div class="why-icon">📵</div><h3>No More Chasing Your Lawn Guy</h3><p>Traditional services mean awkward texts, cash under the mat, and hoping he shows up. We automate everything. Set it and forget it.</p></div>
-        <div class="why-card tilt-card reveal"><div class="why-icon">💲</div><h3>Clear, Upfront Pricing</h3><p>$45 or $60 per week + 8.25% tax — that's it. You know the price before you start. No surprise charges, no rate creep.</p></div>
-        <div class="why-card tilt-card reveal"><div class="why-icon">🛡️</div><h3>We're Accountable</h3><p>You're dealing with a real service company, not a solo operator. If something goes wrong, contact us and we fix it — no ghosting.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="pricing" style="background:var(--dark)">
-    <div class="section-inner">
-      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:32px; flex-wrap:wrap; margin-bottom:40px;">
-        <div style="flex:1; min-width:240px;">
-          <div class="section-tag">Simple Pricing</div>
-          <h2 style="margin-bottom:10px;">Pick Your Plan. That's It.</h2>
-          <p style="color:rgba(255,255,255,0.55); font-size:0.97rem; line-height:1.6; max-width:420px;">Weekly recurring. Auto-billed. Cancel anytime. No contracts. <strong style="color:rgba(255,255,255,0.75);">8.25% sales tax added at checkout.</strong></p>
+  <section class="block" id="why">
+    <div class="wrap">
+      <h2>Why not just hire a guy?</h2>
+      <p class="lede">You can. Here's what changes when it's a system instead of a favor.</p>
+      <div class="compare">
+        <div class="them">
+          <h3>The usual lawn guy</h3>
+          <ul>
+            <li><svg width="18" height="18"><use href="#i-x"/></svg>Shows up when he can</li>
+            <li><svg width="18" height="18"><use href="#i-x"/></svg>Cash or Venmo every visit</li>
+            <li><svg width="18" height="18"><use href="#i-x"/></svg>Price changes from visit to visit</li>
+            <li><svg width="18" height="18"><use href="#i-x"/></svg>You chase him when something's missed</li>
+          </ul>
         </div>
-        <div style="flex-shrink:0; width:100%; max-width:340px;">
-          <div style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.15); border-radius:14px; padding:20px 22px;">
-            <p style="color:rgba(255,255,255,0.5); font-size:0.78rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:8px;">Check Your Area</p>
-            <p style="color:rgba(255,255,255,0.75); font-size:0.9rem; margin-bottom:14px; line-height:1.5;">Enter your zip code to confirm we service your area.</p>
-            <div style="display:flex; background:rgba(255,255,255,0.95); border-radius:9px; overflow:hidden;">
-              <input type="text" id="zipInput" maxlength="5" placeholder="e.g. 77584" onkeydown="if(event.key==='Enter') checkZip()" style="flex:1; padding:12px 14px; border:none; outline:none; font-family:var(--font-body); font-size:1rem; color:var(--dark); background:transparent; min-width:0;">
-              <button onclick="checkZip()" style="background:var(--green); color:#fff; border:none; padding:12px 16px; font-family:var(--font-head); font-weight:800; font-size:0.9rem; cursor:pointer; white-space:nowrap;">Check →</button>
-            </div>
-            <div id="zipOk" style="display:none; margin-top:10px; color:#a8eea0; font-size:0.85rem; font-weight:600; align-items:center; gap:6px;">✓ <span id="zipOkMsg">Great news — we service your area!</span></div>
-            <div id="zipNo" style="display:none; margin-top:10px; color:#ffb3a7; font-size:0.85rem; line-height:1.5;">📍 <strong>Not in our area yet.</strong> We currently serve Pearland, Manvel &amp; Friendswood — League City, Alvin &amp; Clear Lake coming soon. <a href="mailto:hello@yardsteady.com?subject=Service%20Area%20Request" style="color:#ffcf99; font-weight:600;">Notify me when you expand →</a></div>
-          </div>
-        </div>
-      </div>
-
-      <div id="pricingCards" style="display:none;">
-        <div class="pricing-grid">
-          <div class="price-card featured tilt-card reveal">
-            <div class="price-badge">Most Popular</div>
-            <div class="price-label">Standard Yard</div>
-            <div class="price-amount">$45</div>
-            <div class="price-period">per week + 8.25% tax, billed weekly</div>
-            <div style="display:inline-block; background:rgba(77,184,64,0.18); border:1px solid rgba(77,184,64,0.35); color:#a8eea0; font-size:0.78rem; font-weight:700; padding:4px 12px; border-radius:20px; margin-bottom:20px;">TYPICAL SUBDIVISION YARD</div>
-            <ul class="price-list"><li>Weekly mow, trim &amp; blow</li><li>Auto-billing via Stripe</li><li>We handle all scheduling</li><li>7-day re-mow guarantee</li><li>Cancel anytime — just text</li></ul>
-            <a href="#" class="btn-cta" style="width:100%; text-align:center; display:block;" onclick="openModal('small'); return false;">Start Service — $45/wk + tax</a>
-          </div>
-          <div class="price-card tilt-card reveal">
-            <div class="price-label">Large Yard</div>
-            <div class="price-amount">$60</div>
-            <div class="price-period">per week + 8.25% tax, billed weekly</div>
-            <div style="display:inline-block; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.6); font-size:0.78rem; font-weight:700; padding:4px 12px; border-radius:20px; margin-bottom:20px;">CORNER LOT / LARGER PROPERTY</div>
-            <ul class="price-list"><li>Weekly mow, trim &amp; blow</li><li>Auto-billing via Stripe</li><li>We handle all scheduling</li><li>7-day re-mow guarantee</li><li>Cancel anytime — just text</li></ul>
-            <a href="#" class="btn-cta-outline" style="width:100%; text-align:center; display:block; padding:17px 0;" onclick="openModal('large'); return false;">Start Service — $60/wk + tax</a>
-          </div>
-          <div class="price-card tilt-card reveal" style="opacity:0.8;">
-            <div class="price-label" style="color:rgba(255,255,255,0.4);">Extra-Large Yard</div>
-            <div class="price-amount" style="font-size:2.4rem; color:rgba(255,255,255,0.45);">Custom</div>
-            <div class="price-period" style="color:rgba(255,255,255,0.35);">quote required</div>
-            <div style="display:inline-block; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.35); font-size:0.78rem; font-weight:700; padding:4px 12px; border-radius:20px; margin-bottom:20px;">ACREAGE / OVERSIZED LOTS</div>
-            <ul class="price-list"><li style="color:rgba(255,255,255,0.4);">Satellite review of your property</li><li style="color:rgba(255,255,255,0.4);">Quote within 48 hours</li><li style="color:rgba(255,255,255,0.4);">Same auto-billing &amp; reliability</li><li style="color:rgba(255,255,255,0.4);">No obligation to proceed</li></ul>
-            <a href="#" class="btn-cta-outline" style="width:100%; text-align:center; display:block; padding:17px 0; border-color:rgba(255,255,255,0.3); color:rgba(255,255,255,0.75);" onclick="openModal('custom'); return false;">Get a Custom Quote →</a>
-          </div>
-        </div>
-
-        <div style="margin-top:24px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:16px 20px; max-width:720px; display:flex; gap:12px; align-items:flex-start;">
-          <span style="font-size:1.2rem; flex-shrink:0;">⚠️</span>
-          <p style="color:rgba(255,255,255,0.7); font-size:0.88rem; line-height:1.6; margin:0;"><strong style="color:rgba(255,255,255,0.9);">First mow overgrowth note:</strong> If your grass is over 9 inches tall on the first visit, an additional one-time fee (up to 50–100% of the regular rate) may apply. We'll always notify you before charging anything extra.</p>
-        </div>
-        <p style="color:rgba(255,255,255,0.3); font-size:0.82rem; margin-top:14px;">All prices subject to 8.25% Texas sales tax. Preferred mow day not guaranteed — service within a 1–3 day window. We reserve the right to decline, cancel, or re-quote service if a property's actual size, terrain, or complexity exceeds what was represented at signup.</p>
-        <div style="margin-top:14px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:14px 18px; max-width:720px; display:flex; gap:10px; align-items:flex-start;">
-          <span style="font-size:1.1rem; flex-shrink:0; margin-top:2px;">📱</span>
-          <div>
-            <p style="color:rgba(255,255,255,0.8); font-size:0.88rem; font-weight:600; margin:0 0 4px;">Need to cancel? It takes one message.</p>
-            <p style="color:rgba(255,255,255,0.5); font-size:0.85rem; margin:0; line-height:1.65;">Text <strong style="color:rgba(255,255,255,0.75);">(832) 798-4827</strong> or email <strong style="color:rgba(255,255,255,0.75);">hello@yardsteady.com</strong> with your name and address. Cancelled same day — no hold music.</p>
-          </div>
+        <div class="us">
+          <h3>Yard Steady</h3>
+          <ul>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Set weekly route, 1–3 day window</li>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Billed automatically, nothing to hand over</li>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Price set before your first mow</li>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Text us and it gets fixed within 7 days</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="forwhom">
-    <div class="section-inner">
-      <div class="section-tag">Is This For You?</div>
-      <h2>Built For the Right Customer.</h2>
-      <div class="forwhom-grid" style="margin-top:40px;">
-        <div class="forwhom-card yes reveal"><h3>✓ This is for you if…</h3><ul class="forwhom-list"><li>You want weekly recurring mowing</li><li>You prefer clear, upfront pricing</li><li>You don't want to manage a mower or crew</li><li>You like auto-billing — set it and forget it</li><li>Reliability matters more than the cheapest rate</li></ul></div>
-        <div class="forwhom-card no reveal"><h3>✕ This isn't for you if…</h3><ul class="forwhom-list"><li>You only need a one-time mow</li><li>You want to negotiate pricing each visit</li><li>You need landscaping or specialty work</li><li>You prefer to coordinate directly with a mower</li></ul></div>
+  <section class="block alt">
+    <div class="wrap promise">
+      <div>
+        <h2>What we promise</h2>
+        <p class="lede">A small local company, run so you never have to think about your lawn.</p>
       </div>
-      <p class="forwhom-footnote"><strong>We focus on simple recurring lawn service — done reliably, every week.</strong></p>
-    </div>
-  </section>
-
-  <!-- SERVICE AREAS (SEO) -->
-  <section style="background:var(--off-white)">
-    <div class="section-inner">
-      <div class="section-tag">Service Areas</div>
-      <h2>Serving the Greater Pearland Area</h2>
-      <p class="section-sub" style="margin-bottom:0">Modern subscription lawn care with instant online signup and satellite-verified pricing.</p>
-      <div class="area-grid">
-        <div class="area-card tilt-card reveal"><h3>Pearland</h3><p>Weekly mowing for Pearland homeowners. Instant online signup, no phone calls required.</p></div>
-        <div class="area-card tilt-card reveal"><h3>Manvel</h3><p>Flexible routing and satellite pricing for Manvel neighborhoods and larger lots.</p></div>
-        <div class="area-card tilt-card reveal"><h3>Friendswood</h3><p>Reliable weekly service for busy Friendswood homeowners who want simple autopay.</p></div>
-        <div class="area-card tilt-card reveal"><h3>Coming Soon</h3><p>League City, Alvin &amp; Clear Lake — join the waitlist and we'll notify you when we expand to your street.</p></div>
+      <div>
+        <div class="promise-card">
+          <h3>The 7-day re-mow guarantee</h3>
+          <p>Something missed or not up to standard? Tell us within 7 days. We come back and fix it, or refund that week.</p>
+        </div>
+        <div class="promise-card">
+          <h3>Cancel with one message</h3>
+          <p>Text (832) 798-4827 or email us with your name and address. Cancelled the same day, with no fee and no call.</p>
+        </div>
+        <div class="promise-card">
+          <h3>Locally owned</h3>
+          <p>Yard Steady is based in Pearland and serves Pearland, Manvel and Friendswood. League City, Alvin and Clear Lake are next.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="cta-bottom">
-    <h2>Your Lawn Sorted. Every Week.</h2>
-    <p>Sign up in minutes. We handle the rest. Or refer neighbors and earn up to $600/year in referral credits.</p>
-    <div class="cta-pair">
-      <a href="#pricing" class="btn-cta" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'}); return false;">🌿 See Plans &amp; Start Service</a>
-      <a href="#" class="btn-cta-outline" onclick="showPage('referral'); return false;">💰 Referral Program</a>
+  <section class="block" id="faq">
+    <div class="wrap">
+      <h2>Common questions</h2>
+      <div class="faq">
+        <details><summary>What's included each week?</summary><p>Mowing, string trimming around edges, and blowing clippings off your driveway and walkways. Landscaping, weeding and shrub trimming aren't included.</p></details>
+        <details><summary>When will my first mow happen?</summary><p>You choose a start date at least 72 hours out. We mow within a 1–3 day window of that date, based on our route.</p></details>
+        <details><summary>Do I need to be home?</summary><p>No. Leave the gate unlocked and pets inside on mow day. You can add a gate code or notes when you sign up.</p></details>
+        <details><summary>What if it rains?</summary><p>Rain can shift your mow within the 1–3 day service window. If it has to move further, we'll text you.</p></details>
+        <details><summary>How do I pay?</summary><p>After you sign up we send a secure Stripe link. Your card is billed weekly, plus 8.25% sales tax. No cash or checks to hand over.</p></details>
+        <details><summary>How do I cancel?</summary><p>Text (832) 798-4827 or email us with your name and address. We cancel the same day. There's no contract and no cancellation fee.</p></details>
+        <details><summary>My grass is really overgrown. Is that a problem?</summary><p>Not at all. If it's over 9 inches tall on the first visit, a one-time overgrowth fee of 50–100% of the weekly rate may apply. We'll always tell you before charging it.</p></details>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <p>© 2026 Yard Steady. Pearland · Manvel · Friendswood, TX.<br><span style="color:rgba(255,255,255,0.28); font-size:0.76rem;">Yard Steady is a brand/property of BLambInvestments LLC.</span></p>
-    <div style="display:flex;gap:20px; flex-wrap:wrap;">
-      <a href="mailto:blambinvestmentsllc@gmail.com">blambinvestmentsllc@gmail.com</a>
-      <span style="color:rgba(255,255,255,0.35); font-size:0.82rem;">Cancel: text (832) 798-4827</span>
-      <a href="#" onclick="showPage('referral'); return false;">Referral Program</a>
+  <section class="final">
+    <div class="wrap">
+      <h2>Start with a $20 mow.</h2>
+      <p>See what weekly service is like for twenty bucks. If it's not for you, cancel with one text.</p>
+      <div class="actions">
+        <button type="button" class="btn btn-sun" onclick="openModal('small','footer-cta')">Get my $20 first mow</button>
+        <a href="sms:+18327984827" class="btn btn-ghost">Text us a question</a>
+      </div>
     </div>
-  </footer>
-</div>
+  </section>
+</main>
 
 <!-- REFERRAL PAGE -->
-<div id="page-referral" style="display:none;">
-  <div style="height:64px;"></div>
-  <div class="referral-hero">
-    <div class="section-tag" style="color:var(--green-glow); margin-bottom:14px;">Referral Program</div>
-    <h1>Refer Neighbors.<br>Lower Your Lawn Bill.</h1>
-    <p style="color:rgba(255,255,255,0.65); font-size:1.05rem; max-width:520px; margin:12px auto 0; line-height:1.7;">Each active referral earns $10/month in credits toward your own mowing bill. Refer enough and your lawn pays for itself.</p>
-    <p style="color:rgba(255,255,255,0.4); font-size:0.78rem; max-width:480px; margin:14px auto 0; line-height:1.6;">Program terms subject to change or discontinuation at any time without notice.</p>
-    <div class="ref-hero-stats">
-      <div class="ref-hero-stat"><div class="ref-hero-stat-num">$10</div><div class="ref-hero-stat-label">Per yard / per month</div></div>
-      <div class="ref-hero-stat-divider"></div>
-      <div class="ref-hero-stat"><div class="ref-hero-stat-num">$600</div><div class="ref-hero-stat-label">Max earnings / year</div></div>
-      <div class="ref-hero-stat-divider"></div>
-      <div class="ref-hero-stat"><div class="ref-hero-stat-num">Auto</div><div class="ref-hero-stat-label">Monthly bill credits</div></div>
-    </div>
-    <div style="margin-top:36px;">
-      <p style="display:inline-flex; align-items:center; gap:10px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:100px; padding:12px 22px; color:rgba(255,255,255,0.55); font-size:0.88rem;">🔗 No app, no account — just your code</p>
-    </div>
-  </div>
-
-  <div class="ref-steps" id="ref-how">
-    <div style="text-align:center; margin-bottom:52px;"><div class="section-tag">How It Works</div><h2>Three Steps. Then Just Collect.</h2></div>
-    <div class="ref-steps-grid">
-      <div class="ref-step tilt-card reveal"><div class="ref-step-num">1</div><div style="font-size:2rem; margin-bottom:12px;">🔗</div><h3>Your Code</h3><p>Your code is your first name + house number (e.g. Brad3314).</p></div>
-      <div class="ref-step tilt-card reveal"><div class="ref-step-num">2</div><div style="font-size:2rem; margin-bottom:12px;">📲</div><h3>Share Anywhere</h3><p>Text your code to neighbors. Post it in Nextdoor or Facebook groups, or your HOA chat.</p></div>
-      <div class="ref-step tilt-card reveal"><div class="ref-step-num">3</div><div style="font-size:2rem; margin-bottom:12px;">💸</div><h3>Credits Applied Monthly</h3><p>$10/month per active referral, reviewed on the 1st and applied to your bill.</p></div>
-    </div>
-  </div>
-
-  <div class="ref-earnings">
-    <div class="section-tag">Calculator</div>
-    <h2>See What You Could Save.</h2>
-    <p style="color:var(--gray-500); max-width:520px; margin:8px auto 32px; font-size:0.92rem; line-height:1.65; text-align:center;">Credits offset your own mowing bill first. ~18 referrals covers a $45/wk plan. Earnings beyond your bill are capped at $600/year.</p>
-    <div class="earn-calc-wrap">
-      <div>
-        <label class="earn-slider-label">Referred Yards</label>
-        <div class="earn-slider-val-row"><span class="earn-slider-val-num" id="sliderVal">5</span><span class="earn-slider-val-label">yards</span></div>
-        <input type="range" class="earn-slider" id="earningsSlider" min="1" max="25" value="5" oninput="updateEarnings(this.value)">
-        <div class="earn-slider-range-labels"><span>1 yard</span><span>25 yards</span></div>
+<main id="page-referral">
+  <section class="ref-hero">
+    <div class="wrap">
+      <h1>Refer a neighbor, lower your lawn bill.</h1>
+      <p class="lede">Every neighbor who signs up with your code earns you $10 a month in credit toward your own Yard Steady bill, for as long as they stay.</p>
+      <div class="ref-stats">
+        <div class="ref-stat"><strong>$10</strong><span>per active referral, per month</span></div>
+        <div class="ref-stat"><strong>$600</strong><span>max per year</span></div>
+        <div class="ref-stat"><strong>Monthly</strong><span>credits applied to your bill</span></div>
       </div>
-      <div class="earn-calc-result">
-        <div class="earn-result-label">Monthly Credits</div>
-        <div class="earn-result-amount" id="earningsAmount">$50</div>
-        <div class="earn-result-annual">= <span id="earningsAnnual">$600</span>/year</div>
-        <div class="earn-result-note" id="earningsNote">Credits offset your mow bill first.</div>
+      <div class="ref-link">
+        <p><b>Your code</b> is your first name plus your house number, like Brad3314.</p>
+        <p style="margin-top:6px;">Share it as a link and it fills in for your neighbor: <code>yardsteady.com/?ref=YourCode</code></p>
       </div>
     </div>
-    <div class="earnings-grid" style="margin-top:40px;">
-      <div class="earn-card tilt-card reveal"><div class="earn-homes">1 Yard</div><div class="earn-amount">$10</div><div class="earn-period">/ month</div></div>
-      <div class="earn-card tilt-card reveal"><div class="earn-homes">5 Yards</div><div class="earn-amount">$50</div><div class="earn-period">/ month</div></div>
-      <div class="earn-card tilt-card reveal"><div class="earn-homes">10 Yards</div><div class="earn-amount">$100</div><div class="earn-period">/ month</div></div>
-      <div class="earn-card tilt-card reveal" style="border-bottom-color:var(--green-glow)"><div class="earn-homes">18 Yards</div><div class="earn-amount" style="color:var(--green)">$180</div><div class="earn-period">free mowing</div></div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <h2>How referrals work</h2>
+      <ol class="steps">
+        <li><h3>Share your code</h3><p>Text it to neighbors, or post your link in Nextdoor, a Facebook group, or your HOA chat.</p></li>
+        <li><h3>They sign up</h3><p>They enter your code at signup, or it fills in automatically from your link.</p></li>
+        <li><h3>Credits each month</h3><p>We review referrals the first week of each month and apply $10 per active referral to your next bill.</p></li>
+      </ol>
     </div>
-    <p style="color:var(--gray-500); font-size:0.8rem; margin-top:20px; text-align:center;">The referral program — including credit amounts, caps, and eligibility — is subject to change or discontinuation at any time without notice. Cap: $600/year per person due to IRS reporting requirements.</p>
-  </div>
+  </section>
 
-  <div class="ref-faq">
-    <div style="text-align:center; margin-bottom:40px;"><div class="section-tag">FAQ</div><h2>How Referrals Work.</h2></div>
-    <div class="faq-list">
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How does $10/month work exactly? <span class="arrow">▼</span></div><div class="faq-a">For every person who signs up using your code and stays active, you earn $10/month in credits. Credits are reviewed monthly and applied toward your own Yard Steady bill first. Earnings beyond your bill are processed up to the $600/year cap.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">When do credits get applied? <span class="arrow">▼</span></div><div class="faq-a">Credits are reviewed during the first week of each month and applied as a Stripe billing adjustment on your next bill.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Why the $600/year cap? <span class="arrow">▼</span></div><div class="faq-a">The IRS requires a 1099 for payments to individuals over $600/year. To keep things simple during our launch phase, we cap referral earnings at $600/year per person.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I need to be a customer to refer? <span class="arrow">▼</span></div><div class="faq-a">No — anyone can join the referral program. You don't need to be a lawn service customer yourself.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can the referral program change? <span class="arrow">▼</span></div><div class="faq-a">Yes. Credit amounts, the annual cap, and the program itself are subject to change or discontinuation at any time without notice. Credits already applied to your account are not affected retroactively.</div></div>
+  <section class="block alt">
+    <div class="wrap">
+      <h2>See what you could save</h2>
+      <p class="lede">About 18 active referrals covers a $40-a-week plan.</p>
+      <div class="calc">
+        <div>
+          <label for="earningsSlider">Neighbors referred</label>
+          <div class="count"><span id="sliderVal">5</span></div>
+          <input type="range" id="earningsSlider" min="1" max="25" value="5" oninput="updateEarnings(this.value)">
+        </div>
+        <div class="result">
+          <label>Monthly credit</label>
+          <strong id="earningsAmount">$50</strong>
+          <p class="note" id="earningsNote"></p>
+        </div>
+      </div>
+      <p class="fine">Credits apply to your own Yard Steady bill first. Earnings beyond your bill are capped at $600 a year because of IRS reporting rules. Credit amounts, caps and eligibility may change or end at any time; credits already applied are not affected.</p>
     </div>
-  </div>
+  </section>
 
-  <div class="ref-cta">
-    <div class="section-tag" style="color:var(--green-glow); margin-bottom:12px;">Ready to Start?</div>
-    <h2>Your Neighborhood Pays for Your Lawn.</h2>
-    <p>Refer neighbors. Earn credits. Reduce your bill — or cover it entirely.</p>
-    <p style="display:inline-flex; align-items:center; gap:10px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:100px; padding:12px 22px; color:rgba(255,255,255,0.55); font-size:0.88rem;">🔗 No app, no account — just your code</p>
-  </div>
+  <section class="block">
+    <div class="wrap">
+      <h2>Referral questions</h2>
+      <div class="faq">
+        <details><summary>When do credits get applied?</summary><p>We review referrals the first week of each month and apply credits as a billing adjustment on your next Stripe bill.</p></details>
+        <details><summary>Why is there a $600 yearly cap?</summary><p>The IRS requires a 1099 for payments to an individual over $600 a year. To keep it simple during launch, referral earnings are capped there.</p></details>
+        <details><summary>Do I need to be a customer?</summary><p>No, anyone can refer. You don't need to be a lawn customer yourself.</p></details>
+      </div>
+      <div style="margin-top:32px;"><button type="button" class="btn btn-sun" onclick="showPage('home')">Back to lawn service</button></div>
+    </div>
+  </section>
+</main>
 
-  <footer>
-    <p>© 2026 Yard Steady. Pearland · Manvel · Friendswood, TX.<br><span style="color:rgba(255,255,255,0.28); font-size:0.76rem;">Yard Steady is a brand/property of BLambInvestments LLC.</span></p>
-    <div style="display:flex;gap:20px;">
-      <a href="#" onclick="showPage('home'); return false;">← Back to Home</a>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <strong style="color:#fff; font-family:var(--head); font-size:1.4rem;">Yard Steady</strong>
+      <p>Weekly lawn mowing in Pearland, Manvel and Friendswood, TX.</p>
+      <p class="small">© 2026 Yard Steady, a brand of BLambInvestments LLC.</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="sms:+18327984827">Text (832) 798-4827</a>
       <a href="mailto:blambinvestmentsllc@gmail.com">blambinvestmentsllc@gmail.com</a>
+      <a href="mailto:blambinvestmentsllc@gmail.com?subject=Cancel%20My%20Yard%20Steady%20Service&body=Name%3A%20%0AService%20address%3A%20%0A%0APlease%20cancel%20my%20weekly%20service.">Email us to cancel</a>
+      <a href="#" onclick="showPage('referral'); return false;">Referral program</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="mobile-bar" id="mobileBar">
+  <button type="button" class="btn btn-sun" onclick="openModal('small','mobile-bar')">Get my $20 first mow</button>
+  <a href="sms:+18327984827" class="btn btn-ghost" aria-label="Text us">Text</a>
+</div>
+
+<!-- SIGNUP -->
+<div class="modal" id="signupModal" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" onclick="if(event.target===this)closeModal()">
+  <div class="sheet">
+    <div class="sheet-head">
+      <h2 id="sheetTitle">Get your $20 first mow</h2>
+      <p id="sheetSub">Then $40 a week plus tax. Takes about a minute.</p>
+      <button type="button" class="sheet-close" onclick="closeModal()" aria-label="Close">✕</button>
     </div>
-  </footer>
+    <div class="progress" id="progress"><span></span><span></span><span></span></div>
+    <div class="sheet-body">
+
+      <div class="step" id="stepYard">
+        <p class="step-title">Your yard</p>
+        <div class="field">
+          <label>Yard size</label>
+          <div class="plans" role="group" aria-label="Yard size">
+            <button type="button" class="plan" id="planSmall" onclick="selectPlan('small')"><b>$40</b><span>Standard</span><span>Typical lot</span></button>
+            <button type="button" class="plan" id="planLarge" onclick="selectPlan('large')"><b>$55</b><span>Large</span><span>Corner or bigger</span></button>
+            <button type="button" class="plan" id="planCustom" onclick="selectPlan('custom')"><b>Quote</b><span>Oversized</span><span>Or not sure</span></button>
+          </div>
+          <p class="hint" id="planHint">Weekly price. Your first mow is $20. We confirm size by satellite before the first mow.</p>
+        </div>
+        <div class="field">
+          <label for="fieldAddress">Service address</label>
+          <input type="text" id="fieldAddress" autocomplete="street-address" placeholder="123 Maple St, Pearland">
+          <p class="msg" id="errAddress">Enter the address we'll be mowing.</p>
+        </div>
+        <div class="field" id="dateField">
+          <label for="fieldDate">Preferred first mow date</label>
+          <input type="date" id="fieldDate">
+          <p class="hint">At least 72 hours from now. We mow within 1–3 days of it.</p>
+          <p class="msg" id="errDate">Pick a date at least 72 hours from today.</p>
+        </div>
+        <div class="field">
+          <label for="fieldNotes">Gate code, pets or notes <span class="opt">(optional)</span></label>
+          <textarea id="fieldNotes" rows="2" placeholder="Side gate code 1234, dog stays inside"></textarea>
+        </div>
+        <div class="row-btns">
+          <button type="button" class="btn btn-turf" onclick="toContact()">Continue</button>
+        </div>
+      </div>
+
+      <div class="step" id="stepContact">
+        <p class="step-title">Where should we send your link?</p>
+        <div class="field">
+          <label for="fieldName">Your name</label>
+          <input type="text" id="fieldName" autocomplete="name">
+          <p class="msg" id="errName">Enter your name.</p>
+        </div>
+        <div class="field">
+          <label for="fieldPhone">Mobile phone</label>
+          <input type="tel" id="fieldPhone" autocomplete="tel" placeholder="(832) 555-0123">
+          <p class="msg" id="errPhone">Enter a 10-digit phone number.</p>
+        </div>
+        <div class="field">
+          <label for="fieldEmail">Email</label>
+          <input type="email" id="fieldEmail" autocomplete="email" placeholder="you@email.com">
+          <p class="msg" id="errEmail">Enter a valid email address.</p>
+        </div>
+        <div class="field">
+          <label for="fieldReferrer">Referral code <span class="opt">(optional)</span></label>
+          <input type="text" id="fieldReferrer" placeholder="Brad3314">
+        </div>
+        <div class="field">
+          <label for="fieldSource">How did you hear about us? <span class="opt">(optional)</span></label>
+          <select id="fieldSource">
+            <option value="">Choose one</option>
+            <option>Door hanger or flyer</option>
+            <option>Yard sign</option>
+            <option>Neighbor or friend</option>
+            <option>Nextdoor</option>
+            <option>Facebook</option>
+            <option>Google</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="fieldCompany">Company</label><input type="text" id="fieldCompany" tabindex="-1" autocomplete="off"></div>
+        <div class="row-btns">
+          <button type="button" class="btn btn-ghost" onclick="showStep('stepYard')">Back</button>
+          <button type="button" class="btn btn-turf" onclick="toReview()">Review</button>
+        </div>
+      </div>
+
+      <div class="step" id="stepReview">
+        <p class="step-title">Check your details</p>
+        <dl class="review" id="reviewList"></dl>
+        <div class="note-box" id="reviewNote"></div>
+        <div class="row-btns">
+          <button type="button" class="btn btn-ghost" onclick="showStep('stepContact')">Back</button>
+          <button type="button" class="btn btn-sun" id="submitBtn" onclick="submitSignup()">Send my signup</button>
+        </div>
+        <p class="consent">By sending, you agree to receive texts from Yard Steady about your service. Message and data rates may apply. Reply STOP to opt out.</p>
+      </div>
+
+      <div class="step" id="stepDone">
+        <div class="done">
+          <svg width="56" height="56" viewBox="0 0 20 20"><use href="#i-check"/></svg>
+          <p class="step-title" id="doneTitle">Signup sent</p>
+          <p id="doneText"></p>
+          <button type="button" class="btn btn-turf btn-block" onclick="closeModal()">Done</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <script>
-  const SERVICE_ZIPS = new Set(['77581','77584','77588','77578','77546']);
+  const CONTACT_EMAIL = 'blambinvestmentsllc@gmail.com';
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgavppqo';
+  const OFFER_CODE = 'first-mow-20';
+  const INTRO_PRICE = 20;
+  const PRICES = { small: 40, large: 55 };
+  const SERVICE_ZIPS = { '77581':'Pearland', '77584':'Pearland', '77588':'Pearland', '77578':'Manvel', '77546':'Friendswood' };
   const COMING_SOON_ZIPS = new Set(['77539','77573','77574','77565','77511','77058','77062','77598']);
 
-  function checkZip() {
-    const zip=document.getElementById('zipInput').value.trim();
-    const okEl=document.getElementById('zipOk'),noEl=document.getElementById('zipNo'),cards=document.getElementById('pricingCards');
-    okEl.style.display='none'; noEl.style.display='none';
-    if(!/^\d{5}$/.test(zip)){document.getElementById('zipInput').style.outline='2px solid #ffb347';setTimeout(()=>document.getElementById('zipInput').style.outline='',1500);return;}
-    if(SERVICE_ZIPS.has(zip)){
-      okEl.style.display='flex';
-      const city=zip==='77578'?'Manvel':zip==='77546'?'Friendswood':'Pearland';
-      document.getElementById('zipOkMsg').textContent=`Great news — we service ${city}!`;
-      cards.style.display='block';
-      setTimeout(()=>cards.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
-    } else if(COMING_SOON_ZIPS.has(zip)){
-      noEl.style.display='block'; cards.style.display='none';
-      noEl.innerHTML='📍 <strong>Coming soon to your area!</strong> We\'re expanding to League City, Alvin &amp; Clear Lake next. <a href="mailto:hello@yardsteady.com?subject=Service%20Area%20Request" style="color:#ffcf99; font-weight:600;">Notify me when you launch here →</a>';
+  // Old $45/$60 Stripe links, not used. Create $20 one-time + $40/$55 weekly prices before re-enabling self-serve checkout.
+  // const STRIPE_SMALL='https://buy.stripe.com/14A4gs9M93IL91z9SEbjW00';
+  // const STRIPE_LARGE='https://buy.stripe.com/6oU3cof6tfrtcdL4ykbjW01';
+
+  const $ = id => document.getElementById(id);
+  let plan = 'small', zip = '', source = '';
+  const params = new URLSearchParams(location.search);
+  const refFromUrl = (params.get('ref') || '').trim().slice(0, 40);
+  const utm = ['utm_source','utm_medium','utm_campaign'].reduce((o,k)=>{ if(params.get(k)) o[k]=params.get(k); return o; }, {});
+
+  function track(name, data){ try { if (window.gtag) window.gtag('event', name, data || {}); } catch(e){} }
+
+  /* Zip check */
+  function checkZip(e){
+    e.preventDefault();
+    const value = $('zipInput').value.trim(), msg = $('zipMsg');
+    msg.className = 'zip-msg show';
+    if (!/^\d{5}$/.test(value)) { msg.classList.add('bad'); msg.textContent = 'Enter a 5-digit zip code.'; $('zipInput').focus(); return; }
+    track('zip_check', { zip: value, result: SERVICE_ZIPS[value] ? 'served' : COMING_SOON_ZIPS.has(value) ? 'soon' : 'out' });
+    if (SERVICE_ZIPS[value]) {
+      zip = value;
+      msg.textContent = `We mow in ${SERVICE_ZIPS[value]}. Let's set up your first mow.`;
+      openModal('small', 'hero-zip');
     } else {
-      noEl.style.display='block'; cards.style.display='none';
-      noEl.innerHTML='📍 <strong>Not in our area yet.</strong> We currently serve Pearland, Manvel &amp; Friendswood — League City, Alvin &amp; Clear Lake coming soon. <a href="mailto:hello@yardsteady.com?subject=Service%20Area%20Request" style="color:#ffcf99; font-weight:600;">Notify me when you expand →</a>';
+      const soon = COMING_SOON_ZIPS.has(value);
+      msg.innerHTML = (soon ? "We're coming to your area soon. " : "We don't serve that zip yet. ") +
+        `<a href="mailto:${CONTACT_EMAIL}?subject=Waitlist%20${value}&body=Please%20let%20me%20know%20when%20Yard%20Steady%20serves%20${value}.">Join the waitlist</a>`;
     }
   }
 
-  function showPage(page) {
-    document.getElementById('page-home').style.display=page==='home'?'block':'none';
-    document.getElementById('page-referral').style.display=page==='referral'?'block':'none';
-    window.scrollTo(0,0);
+  /* Pages */
+  function showPage(page){
+    $('page-home').style.display = page === 'home' ? 'block' : 'none';
+    $('page-referral').style.display = page === 'referral' ? 'block' : 'none';
+    window.scrollTo(0, 0);
   }
 
-  function updateEarnings(val) {
-    const num=parseInt(val),monthly=num*10,annual=Math.min(monthly*12,600);
-    const slider=document.getElementById('earningsSlider');
-    document.getElementById('sliderVal').textContent=num;
-    document.getElementById('earningsAmount').textContent='$'+monthly;
-    document.getElementById('earningsAnnual').textContent='$'+annual.toLocaleString();
-    const note=document.getElementById('earningsNote');
-    if(note){
-      if(num<18)note.textContent=`${18-num} more referrals to cover a $45/wk plan.`;
-      else if(num<24)note.textContent='Standard plan covered. Extra profit capped at $600/yr.';
-      else note.textContent='Large yard plan covered. Extra profit capped at $600/yr.';
-    }
-    if(slider){const pct=((num-1)/24*100).toFixed(1);slider.style.background=`linear-gradient(to right,var(--green) 0%,var(--green) ${pct}%,var(--gray-200) ${pct}%)`;}
+  /* Referral calculator */
+  function updateEarnings(v){
+    const n = parseInt(v, 10);
+    $('sliderVal').textContent = n;
+    $('earningsAmount').textContent = '$' + (n * 10);
+    const note = n < 18 ? `${18 - n} more to cover a $40-a-week plan.` : n < 24 ? 'Standard plan covered.' : 'Large plan covered.';
+    $('earningsNote').textContent = note;
   }
 
-  function toggleFaq(el){el.parentElement.classList.toggle('open');}
-
-  let selectedPlan='small';
-  const ALL_STEPS=['step1','step2','step2c','step3','step3c','step4','step4c'];
-
-  function showOnlyStep(id){ALL_STEPS.forEach(s=>document.getElementById(s).classList.remove('active'));document.getElementById(id).classList.add('active');document.getElementById('modalBox').scrollTop=0;}
-  function setDots(active){[1,2,3].forEach(i=>{const dot=document.getElementById('dot'+i);dot.style.display='';dot.classList.remove('active','done');if(i===active)dot.classList.add('active');else if(i<active)dot.classList.add('done');});}
-  function get72hrMinDate(){const d=new Date();d.setHours(d.getHours()+72);return d.toISOString().split('T')[0];}
-
-  function openModal(plan){
-    selectedPlan=plan||'small';
-    ['fieldName','fieldEmail','fieldPhone','fieldAddress','fieldReferrer','fieldDate','fieldAddressCustom','fieldReferrerCustom','fieldNotes'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
-    document.querySelectorAll('.form-error').forEach(e=>e.classList.remove('visible'));
-    document.querySelectorAll('.form-input').forEach(e=>e.classList.remove('error'));
-    updatePlanDisplay();
-    ['planSmall','planLarge','planCustom'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('selected');});
-    if(selectedPlan==='small'&&document.getElementById('planSmall'))document.getElementById('planSmall').classList.add('selected');
-    else if(selectedPlan==='large'&&document.getElementById('planLarge'))document.getElementById('planLarge').classList.add('selected');
-    else if(document.getElementById('planCustom'))document.getElementById('planCustom').classList.add('selected');
-    document.getElementById('fieldDate').min=get72hrMinDate();
-    showOnlyStep('step1');setDots(1);
-    document.getElementById('signupModal').classList.add('active');
-    document.body.style.overflow='hidden';
+  /* Signup */
+  const STEPS = ['stepYard','stepContact','stepReview','stepDone'];
+  function showStep(id){
+    STEPS.forEach(s => $(s).classList.toggle('on', s === id));
+    const idx = STEPS.indexOf(id);
+    [...$('progress').children].forEach((bar, i) => bar.classList.toggle('on', i <= idx));
+    $('progress').style.display = id === 'stepDone' ? 'none' : 'flex';
+    document.querySelector('.sheet').scrollTop = 0;
+    const first = $(id).querySelector('input, textarea, select');
+    if (first && window.matchMedia('(pointer: fine)').matches) setTimeout(() => first.focus(), 50);
   }
 
-  function closeModal(){document.getElementById('signupModal').classList.remove('active');document.body.style.overflow='';}
-  function handleModalOverlayClick(e){if(e.target===document.getElementById('signupModal'))closeModal();}
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+  function minDate(){ const d = new Date(); d.setHours(d.getHours() + 72); return d.toISOString().split('T')[0]; }
 
-  function selectPlan(plan){
-    selectedPlan=plan;
-    ['planSmall','planLarge','planCustom'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('selected');});
-    const target=plan==='small'?'planSmall':'planLarge';
-    if(document.getElementById(target))document.getElementById(target).classList.add('selected');
-    updatePlanDisplay();
+  function selectPlan(p){
+    plan = p;
+    ['small','large','custom'].forEach(k => $('plan' + k[0].toUpperCase() + k.slice(1)).setAttribute('aria-pressed', String(k === p)));
+    const custom = p === 'custom';
+    $('dateField').style.display = custom ? 'none' : 'block';
+    $('planHint').textContent = custom
+      ? "We'll measure your yard by satellite and text you a price within 48 hours. No payment needed."
+      : 'Weekly price. Your first mow is $20. We confirm size by satellite before the first mow.';
+    $('sheetTitle').textContent = custom ? 'Get a quote for your yard' : 'Get your $20 first mow';
+    $('sheetSub').textContent = custom ? 'We reply within 48 hours. No payment needed.' : `Then $${PRICES[p]} a week plus tax. Takes about a minute.`;
   }
 
-  function switchToCustom(){
-    selectedPlan='custom';
-    ['planSmall','planLarge','planCustom'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('selected');});
-    if(document.getElementById('planCustom'))document.getElementById('planCustom').classList.add('selected');
-    updatePlanDisplay();showOnlyStep('step2c');setDots(2);
+  function openModal(p, from){
+    ['fieldAddress','fieldDate','fieldNotes','fieldName','fieldPhone','fieldEmail','fieldReferrer','fieldCompany'].forEach(id => { $(id).value = ''; });
+    $('fieldSource').value = '';
+    document.querySelectorAll('.field .msg').forEach(m => m.classList.remove('show'));
+    document.querySelectorAll('.field .err').forEach(m => m.classList.remove('err'));
+    if (refFromUrl) $('fieldReferrer').value = refFromUrl;
+    if (zip && SERVICE_ZIPS[zip]) $('fieldAddress').placeholder = `123 Maple St, ${SERVICE_ZIPS[zip]} ${zip}`;
+    $('fieldDate').min = minDate();
+    $('submitBtn').disabled = false; $('submitBtn').textContent = 'Send my signup';
+    source = from || '';
+    selectPlan(p || 'small');
+    showStep('stepYard');
+    $('signupModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    track('signup_open', { plan: p, from: source });
   }
 
-  function updatePlanDisplay(){
-    const badge=document.getElementById('modalPlanBadge'),price=document.getElementById('modalPriceDisplay'),headline=document.getElementById('modalHeadline'),subline=document.getElementById('modalSubline');
-    if(selectedPlan==='custom'){badge.textContent='Extra-Large — Custom Quote';price.innerHTML='Custom <span>/ week</span>';headline.textContent="Let's Figure Out Your Rate.";subline.textContent="Tell us about your yard. We'll respond within 48 hours.";}
-    else{const s=selectedPlan==='small';badge.textContent=s?'Standard Yard':'Large Yard / Corner Lot';price.innerHTML=(s?'$45':'$60')+' <span>/ week + tax</span>';headline.textContent="Let's Get Your Lawn Sorted.";subline.textContent="Takes 60 seconds. No commitment required.";}
+  function closeModal(){ $('signupModal').classList.remove('open'); document.body.style.overflow = ''; }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('signupModal').classList.contains('open')) closeModal(); });
+
+  function flag(inputId, msgId, bad){ $(msgId).classList.toggle('show', bad); $(inputId).classList.toggle('err', bad); return !bad; }
+
+  function toContact(){
+    let ok = flag('fieldAddress', 'errAddress', !$('fieldAddress').value.trim());
+    if (plan !== 'custom') { const d = $('fieldDate').value; ok = flag('fieldDate', 'errDate', !d || d < minDate()) && ok; }
+    if (!ok) return;
+    track('signup_step_yard', { plan });
+    showStep('stepContact');
   }
 
-  function goStep(num){
-    if(num>currentStandardStep()&&!validateStep(currentStandardStep()))return;
-    if(num===1){showOnlyStep('step1');setDots(1);}
-    else if(num===2){showOnlyStep('step2');setDots(2);}
-    else if(num===3){populateConfirm();showOnlyStep('step3');setDots(3);}
+  function toReview(){
+    const email = $('fieldEmail').value.trim(), phone = $('fieldPhone').value.replace(/\D/g, '');
+    let ok = flag('fieldName', 'errName', !$('fieldName').value.trim());
+    ok = flag('fieldPhone', 'errPhone', phone.length < 10) && ok;
+    ok = flag('fieldEmail', 'errEmail', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) && ok;
+    if (!ok) return;
+    track('signup_step_contact', { plan });
+    const rows = [
+      ['Plan', plan === 'custom' ? 'Custom quote' : `$${INTRO_PRICE} first mow, then $${PRICES[plan]}/week + tax`],
+      ['Address', $('fieldAddress').value.trim()],
+      ...(plan !== 'custom' ? [['Start date', fmtDate($('fieldDate').value)]] : []),
+      ['Name', $('fieldName').value.trim()],
+      ['Phone', $('fieldPhone').value.trim()],
+      ['Email', email],
+      ...($('fieldReferrer').value.trim() ? [['Referred by', $('fieldReferrer').value.trim()]] : []),
+      ...($('fieldNotes').value.trim() ? [['Notes', $('fieldNotes').value.trim()]] : [])
+    ];
+    $('reviewList').innerHTML = '';
+    rows.forEach(([k, v]) => { const d = document.createElement('div'); const dt = document.createElement('dt'); const dd = document.createElement('dd'); dt.textContent = k; dd.textContent = v; d.append(dt, dd); $('reviewList').append(d); });
+    $('reviewNote').innerHTML = plan === 'custom'
+      ? '<p>We’ll text you a price within 48 hours. Nothing is charged.</p>'
+      : '<p>Next, we text and email you a secure Stripe link within 48 hours. <b>Nothing is charged until you use it.</b></p><p>If grass is over 9 inches on the first visit, a one-time overgrowth fee may apply. We’ll tell you first.</p>';
+    showStep('stepReview');
   }
 
-  function currentStandardStep(){
-    if(document.getElementById('step1').classList.contains('active'))return 1;
-    if(document.getElementById('step2').classList.contains('active'))return 2;
-    return 3;
-  }
+  function fmtDate(v){ return v ? new Date(v + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }) : ''; }
 
-  function goStepCustom(num){if(num===3){if(!validateCustomStep2())return;populateCustomConfirm();showOnlyStep('step3c');setDots(3);}}
-  function showCustomStep2(){showOnlyStep('step2c');setDots(2);}
-
-  function submitCustomQuote(){
-    const name=document.getElementById('fieldName').value.trim(),email=document.getElementById('fieldEmail').value.trim(),phone=document.getElementById('fieldPhone').value.trim(),address=document.getElementById('fieldAddressCustom').value.trim(),referrer=document.getElementById('fieldReferrerCustom').value.trim(),notes=document.getElementById('fieldNotes').value.trim();
-    document.getElementById('thankYouEmail').textContent=email;
-    document.getElementById('thankYouPhone').textContent=phone;
-    document.getElementById('thankYouAddress').textContent=address;
-    const mailtoFallback=()=>{
-      const subject=`Custom Quote Request — ${name}`;
-      const body=`New custom quote request from the Yard Steady website:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nAddress: ${address}\nReferral Code: ${referrer||'None'}\nNotes: ${notes||'None'}\n\nReview by satellite and send a quote within 48 hours.`;
-      window.location.href=`mailto:hello@yardsteady.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  function submitSignup(){
+    if ($('fieldCompany').value) { finish(); return; } // bot filled the hidden field
+    const btn = $('submitBtn'); btn.disabled = true; btn.textContent = 'Sending…';
+    const custom = plan === 'custom';
+    const data = {
+      request_type: custom ? 'Custom Quote' : 'Standard Signup',
+      plan: custom ? 'Custom quote' : `${plan === 'small' ? 'Standard' : 'Large'}: $${INTRO_PRICE} first mow, then $${PRICES[plan]}/wk + tax`,
+      weekly_price: custom ? 'quote' : PRICES[plan],
+      intro_price: custom ? 'n/a' : INTRO_PRICE,
+      offer: OFFER_CODE,
+      name: $('fieldName').value.trim(),
+      phone: $('fieldPhone').value.trim(),
+      email: $('fieldEmail').value.trim(),
+      address: $('fieldAddress').value.trim(),
+      zip: zip || 'not entered',
+      preferred_start_date: custom ? 'n/a' : fmtDate($('fieldDate').value),
+      notes: $('fieldNotes').value.trim() || 'None',
+      referral_code: $('fieldReferrer').value.trim() || 'None',
+      heard_about: $('fieldSource').value || 'Not given',
+      cta_clicked: source,
+      ...utm,
+      _subject: `${custom ? 'Custom Quote' : 'New Signup'}: ${$('fieldName').value.trim()}`
     };
-    submitToFormspree({
-      request_type:'Custom Quote',
-      name, email, phone, address,
-      referral_code: referrer||'None',
-      notes: notes||'None',
-      _subject:`Custom Quote Request — ${name}`
-    }, mailtoFallback).finally(()=>{
-      showOnlyStep('step4c');
-      [1,2,3].forEach(i=>document.getElementById('dot'+i).style.display='none');
-    });
+    fetch(FORMSPREE_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
+      .then(r => { if (!r.ok) throw new Error('Formspree ' + r.status); track('signup_submit', { plan, offer: OFFER_CODE }); finish(); })
+      .catch(err => {
+        console.error(err);
+        btn.disabled = false; btn.textContent = 'Send my signup';
+        $('reviewNote').innerHTML = `<p style="color:var(--error);"><b>That didn’t go through.</b> Try again, or <a href="sms:+18327984827">text us at (832) 798-4827</a> and we’ll set you up.</p>`;
+        track('signup_error', { plan });
+      });
   }
 
-  function validateStep(step){
-    let valid=true;
-    if(step===1){const name=document.getElementById('fieldName').value.trim(),email=document.getElementById('fieldEmail').value.trim(),phone=document.getElementById('fieldPhone').value.trim().replace(/\D/g,'');setError('errName',!name);setError('errEmail',!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email));setError('errPhone',phone.length<10);if(!name||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)||phone.length<10)valid=false;}
-    if(step===2){const addr=document.getElementById('fieldAddress').value.trim(),dateVal=document.getElementById('fieldDate').value,minDate=get72hrMinDate();setError('errAddress',!addr);setError('errDate',!dateVal||dateVal<minDate);if(!addr||!dateVal||dateVal<minDate)valid=false;}
-    return valid;
+  function finish(){
+    const custom = plan === 'custom';
+    $('doneTitle').textContent = custom ? 'Quote request sent' : 'Signup sent';
+    $('doneText').textContent = custom
+      ? `We'll text ${$('fieldPhone').value.trim() || 'you'} with a price within 48 hours.`
+      : `We'll text ${$('fieldPhone').value.trim() || 'you'} and email ${$('fieldEmail').value.trim() || 'you'} a secure payment link within 48 hours. Your first mow is $20.`;
+    showStep('stepDone');
   }
 
-  function validateCustomStep2(){const addr=document.getElementById('fieldAddressCustom').value.trim();setError('errAddressCustom',!addr);return !!addr;}
-  function setError(id,show){const el=document.getElementById(id);if(!el)return;el.classList.toggle('visible',show);const input=el.previousElementSibling;if(input&&input.classList.contains('form-input'))input.classList.toggle('error',show);}
-
-  function populateConfirm(){
-    const dateVal=document.getElementById('fieldDate').value;
-    document.getElementById('cName').textContent=document.getElementById('fieldName').value.trim();
-    document.getElementById('cEmail').textContent=document.getElementById('fieldEmail').value.trim();
-    document.getElementById('cPhone').textContent=document.getElementById('fieldPhone').value.trim();
-    document.getElementById('cAddress').textContent=document.getElementById('fieldAddress').value.trim();
-    const refVal=document.getElementById('fieldReferrer').value.trim();
-    document.getElementById('cReferrerRow').style.display=refVal?'flex':'none';
-    document.getElementById('cReferrer').textContent=refVal;
-    document.getElementById('cDate').textContent=dateVal?new Date(dateVal+'T12:00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'}):'—';
-    document.getElementById('cPlan').textContent=selectedPlan==='small'?'$45/week + tax':'$60/week + tax';
-  }
-
-  function populateCustomConfirm(){
-    document.getElementById('ccName').textContent=document.getElementById('fieldName').value.trim();
-    document.getElementById('ccEmail').textContent=document.getElementById('fieldEmail').value.trim();
-    document.getElementById('ccPhone').textContent=document.getElementById('fieldPhone').value.trim();
-    document.getElementById('ccAddress').textContent=document.getElementById('fieldAddressCustom').value.trim();
-    const crefVal=document.getElementById('fieldReferrerCustom').value.trim();
-    document.getElementById('ccReferrerRow').style.display=crefVal?'flex':'none';
-    document.getElementById('ccReferrer').textContent=crefVal;
-    document.getElementById('ccNotes').textContent=document.getElementById('fieldNotes').value.trim()||'None';
-  }
-
-  // Kept on file for when self-serve Stripe checkout comes back — not called from either flow right now.
-  const STRIPE_SMALL='https://buy.stripe.com/14A4gs9M93IL91z9SEbjW00';
-  const STRIPE_LARGE='https://buy.stripe.com/6oU3cof6tfrtcdL4ykbjW01';
-
-  const FORMSPREE_ENDPOINT='https://formspree.io/f/xgavppqo';
-
-  function submitToFormspree(payload, mailtoFallback){
-    return fetch(FORMSPREE_ENDPOINT, {
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify(payload)
-    }).then(res=>{
-      if(!res.ok) throw new Error('Formspree responded with an error');
-    }).catch(err=>{
-      console.error('Formspree submission failed, falling back to email client:', err);
-      if(mailtoFallback) mailtoFallback();
-    });
-  }
-
-  function submitStandardRequest(){
-    const email=document.getElementById('fieldEmail').value.trim(),name=document.getElementById('fieldName').value.trim(),phone=document.getElementById('fieldPhone').value.trim(),address=document.getElementById('fieldAddress').value.trim(),dateVal=document.getElementById('fieldDate').value,referrer=document.getElementById('fieldReferrer').value.trim();
-    const dateLabel=dateVal?new Date(dateVal+'T12:00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'}):'—';
-    const planLabel=selectedPlan==='small'?'Standard — $45/wk + tax':'Large — $60/wk + tax';
-    document.getElementById('thankYouEmail4').textContent=email;
-    document.getElementById('thankYouPhone4').textContent=phone;
-    document.getElementById('thankYouAddress4').textContent=address;
-    const mailtoFallback=()=>{
-      const subject=`New Signup Request — ${name}`;
-      const body=`New signup request from the Yard Steady website:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nAddress: ${address}\nPlan: ${planLabel}\nPreferred Start Date: ${dateLabel}\nReferral Code: ${referrer||'None'}\n\nSend them a Stripe payment link to complete signup.`;
-      window.location.href=`mailto:hello@yardsteady.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    };
-    submitToFormspree({
-      request_type:'Standard Signup',
-      name, email, phone, address,
-      plan: planLabel,
-      preferred_start_date: dateLabel,
-      referral_code: referrer||'None',
-      _subject:`New Signup Request — ${name}`
-    }, mailtoFallback).finally(()=>{
-      showOnlyStep('step4');
-      [1,2,3].forEach(i=>document.getElementById('dot'+i).style.display='none');
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded',()=>{
-    document.getElementById('page-home').style.display='block';
-    document.getElementById('page-referral').style.display='none';
+  document.addEventListener('DOMContentLoaded', () => {
+    $('page-referral').style.display = 'none';
     updateEarnings(5);
-    initDepthEffects();
+    if (params.get('page') === 'referral') showPage('referral');
   });
-
-  // ===== DEPTH / MOTION LAYER =====
-  function initDepthEffects(){
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // Reveal-on-scroll for cards and grouped content
-    const revealEls = document.querySelectorAll('.reveal');
-    if(reduceMotion || !('IntersectionObserver' in window)){
-      revealEls.forEach(el=>el.classList.add('in-view'));
-    } else {
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(entry=>{
-          if(entry.isIntersecting){ entry.target.classList.add('in-view'); io.unobserve(entry.target); }
-        });
-      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-      revealEls.forEach(el=>io.observe(el));
-    }
-
-    // Nav elevation + hero parallax on scroll
-    const navEl = document.querySelector('nav');
-    const heroBg = document.querySelector('.hero-bg');
-    let ticking = false;
-    function onScroll(){
-      if(navEl) navEl.classList.toggle('scrolled', window.scrollY > 12);
-      if(heroBg && !reduceMotion){
-        const y = Math.min(window.scrollY, 800) * 0.22;
-        heroBg.style.transform = `translateY(${y}px) scale(1.08)`;
-      }
-      ticking = false;
-    }
-    window.addEventListener('scroll', ()=>{ if(!ticking){ requestAnimationFrame(onScroll); ticking = true; } }, { passive: true });
-    onScroll();
-
-    // Pointer-tilt on cards — only for mouse/trackpad users, never touch
-    const canTilt = window.matchMedia('(hover: hover) and (pointer: fine)').matches && !reduceMotion;
-    if(canTilt){
-      document.querySelectorAll('.tilt-card').forEach(card=>{
-        let rect = null, raf = null, pending = null;
-        card.addEventListener('mouseenter', ()=>{ rect = card.getBoundingClientRect(); });
-        card.addEventListener('mousemove', e=>{
-          pending = e;
-          if(raf) return;
-          raf = requestAnimationFrame(()=>{
-            raf = null;
-            if(!rect) rect = card.getBoundingClientRect();
-            const px = (pending.clientX - rect.left) / rect.width - 0.5;
-            const py = (pending.clientY - rect.top) / rect.height - 0.5;
-            const rx = (py * -16).toFixed(2);
-            const ry = (px * 16).toFixed(2);
-            card.classList.add('tilting');
-            card.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-10px) scale(1.035) translateZ(24px)`;
-          });
-        });
-        card.addEventListener('mouseleave', ()=>{ card.classList.remove('tilting'); card.style.transform=''; rect=null; });
-      });
-    }
-
-    // Mouse-follow spotlight glow in the hero
-    const heroSection = document.getElementById('home');
-    const spotlight = document.getElementById('heroSpotlight');
-    if(heroSection && spotlight && !reduceMotion){
-      let heroRect = null, sRaf = null, sPending = null;
-      heroSection.addEventListener('mouseenter', ()=>{ heroRect = heroSection.getBoundingClientRect(); });
-      heroSection.addEventListener('mousemove', e=>{
-        sPending = e;
-        if(sRaf) return;
-        sRaf = requestAnimationFrame(()=>{
-          sRaf = null;
-          if(!heroRect) heroRect = heroSection.getBoundingClientRect();
-          spotlight.style.setProperty('--mx', `${sPending.clientX - heroRect.left}px`);
-          spotlight.style.setProperty('--my', `${sPending.clientY - heroRect.top}px`);
-        });
-      });
-    }
-  }
 </script>
 </body>
 </html>
