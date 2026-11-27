@@ -57,7 +57,7 @@ Make sure this inbox is actually set up before launch. Appears in:
 ### 4. Business Name / Branding
 Business name is **Yard Steady** (BLambInvestments LLC d/b/a Yard Steady). If it changes again, search for `Yard Steady` and update all instances.
 
-**Note:** `logo_smaller.png` in this folder still has the old "Gulf Coast Mow" wordmark baked into the image — it's no longer referenced in `index.html` (the nav now uses plain CSS text), but a proper Yard Steady logo still needs to be designed and dropped in.
+The public phone number is **(832) 895-1693** (`tel:+18328951693` / `sms:+18328951693`). The nav uses the Yard Steady wordmark. GA4 measurement ID `G-SV2DYD9QR9` is installed in `index.html`. `/referral` is the same page as `/?page=referral` (`referral/index.html` is a copy of `index.html`). `/crew` redirects to the homepage and is not in the sitemap.
 
 ---
 
@@ -178,7 +178,7 @@ To add a new city once it's actually live, update the hero badge, the `SERVICE_Z
 | Item | Value |
 |------|-------|
 | Email | hello@yardsteady.com |
-| Phone | (832) 798-4827 |
+| Phone | (832) 895-1693 |
 | Service area | Pearland · Manvel · Friendswood, TX (League City · Alvin · Clear Lake coming soon) |
 | Plans | $45/wk (standard) · $60/wk (large) |
 | Referral credit | One week free per referral, applied manually via Stripe Customer Balance — capped at $600/year per referrer (IRS 1099 threshold) |

@@ -24,7 +24,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
-<!-- GA4: paste your Google Analytics snippet here (gtag.js). The page already sends events through track(). -->
+<!-- GA4 (gtag.js). Measurement ID: G-SV2DYD9QR9. track() sends events through window.gtag. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SV2DYD9QR9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-SV2DYD9QR9');
+</script>
+<script>
+  (function () {
+    var path = location.pathname || '';
+    var referral = /\/referral\/?(?:index\.html)?$/.test(path) || /(?:^|[?&])page=referral(?:&|$)/.test(location.search || '');
+    if (referral) document.documentElement.classList.add('start-referral');
+  })();
+</script>
 
 <style>
   :root {
@@ -75,11 +90,36 @@
   .header-links { display: flex; align-items: center; gap: 22px; }
   .header-links a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
   .header-links a:hover { color: var(--turf); text-decoration: underline; }
+  .header-links a.btn,
+  .header-links a.btn:hover { text-decoration: none; }
   .header-links .btn { font-size: 1.05rem; padding: 8px 16px; min-height: 42px; box-shadow: 0 2px 0 var(--ink); }
-  .header-phone { font-weight: 700 !important; }
+  .header-contact { display: flex; align-items: center; gap: 8px; }
+  .header-links a.header-phone { font-family: var(--head); font-weight: 800; font-size: 1.28rem; color: var(--ink); text-decoration: none; letter-spacing: 0.01em; white-space: nowrap; line-height: 1; }
+  .header-links a.header-phone:hover { color: var(--turf); text-decoration: underline; }
+  .header-links .btn-contact { font-size: 1rem; padding: 6px 12px; min-height: 40px; box-shadow: none; }
   .show-sm { display: none; }
-  @media (max-width: 760px) { .header-links .hide-sm { display: none; } .header-links .show-sm { display: inline; } }
-  @media (max-width: 480px) { .header-links .btn { display: none; } }
+  .zip-contacts { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 12px; }
+  .footer-phone { margin-top: 8px; }
+  .footer-phone a { font-family: var(--head); font-weight: 800; font-size: 1.7rem; color: #fff; text-decoration: none; letter-spacing: 0.01em; }
+  .footer-phone a:hover { text-decoration: underline; }
+  .footer-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  footer.site .btn-contact { color: #fff; border-color: rgba(255,255,255,0.8); background: transparent; box-shadow: none; }
+  footer.site .btn-contact:hover { background: rgba(255,255,255,0.12); }
+  @media (max-width: 980px) {
+    header.site .wrap { height: auto; min-height: 64px; flex-wrap: wrap; padding-top: 10px; padding-bottom: 10px; row-gap: 8px; }
+    .header-links { flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+  }
+  @media (max-width: 760px) {
+    .header-links .hide-sm { display: none; }
+    .header-links .show-sm { display: inline; }
+    .header-links { width: 100%; justify-content: flex-start; }
+    .header-contact { width: 100%; justify-content: flex-start; flex-wrap: wrap; }
+  }
+  @media (max-width: 480px) {
+    .header-links .btn-sun { display: none; }
+    .header-links .btn-contact { display: inline-flex; min-height: 44px; padding: 8px 14px; }
+    .header-links a.header-phone { flex: 1 1 100%; font-size: 1.5rem; }
+  }
 
   /* Hero: the mowed lawn */
   .hero { position: relative; color: #fff; background: repeating-linear-gradient(100deg, var(--turf) 0 110px, var(--clipping) 110px 220px); overflow: hidden; }
@@ -218,6 +258,8 @@
 
   /* Referral page */
   #page-referral { display: none; }
+  html.start-referral #page-home { display: none; }
+  html.start-referral #page-referral { display: block; }
   .ref-hero { background: var(--sage); padding: 64px 0 56px; border-bottom: 1px solid var(--line); }
   .ref-hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); margin-bottom: 14px; }
   .ref-stats { display: flex; flex-wrap: wrap; gap: 14px 40px; margin-top: 28px; }
@@ -297,6 +339,7 @@
    "image": "https://yardsteady.com/og-image.png",
    "logo": "https://yardsteady.com/apple-touch-icon.png",
    "email": "blambinvestmentsllc@gmail.com",
+   "telephone": "+1-832-895-1693",
    "description": "Weekly residential lawn mowing in Pearland, Manvel and Friendswood, Texas. Set weekly pricing, automatic billing, no contract and a 7-day re-mow guarantee.",
    "priceRange": "$40-$55 per week",
    "currenciesAccepted": "USD",
@@ -430,10 +473,10 @@
 }
 </script>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232D6A2E'/%3E%3Cpath d='M0 64 L22 0 H36 L14 64Z' fill='%233A7D39'/%3E%3Cpath d='M28 64 L50 0 H64 V8 L44 64Z' fill='%233A7D39'/%3E%3Ctext x='32' y='43' font-family='Arial,Helvetica,sans-serif' font-weight='900' font-size='26' fill='%23ffffff' text-anchor='middle'%3EYS%3C/text%3E%3C/svg%3E">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 </head>
 <body>
 
@@ -444,15 +487,19 @@
 
 <header class="site">
   <div class="wrap">
-    <a href="#" class="logo" onclick="showPage('home'); return false;" aria-label="Yard Steady home">
+    <a href="/" class="logo" onclick="showPage('home'); return false;" aria-label="Yard Steady home">
       <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#2D6A2E"/><path d="M0 64 L22 0 H36 L14 64Z" fill="#3A7D39"/><path d="M28 64 L50 0 H64 V8 L44 64Z" fill="#3A7D39"/></svg>
       Yard Steady
     </a>
     <nav class="header-links" aria-label="Main">
       <a href="#pricing" class="hide-sm" onclick="showPage('home')">Prices</a>
       <a href="#faq" class="hide-sm" onclick="showPage('home')">Questions</a>
-      <a href="#" class="hide-sm" onclick="showPage('referral'); return false;">Referrals</a>
-      <a href="sms:+18327984827" class="header-phone">Text us</a>
+      <a href="/referral" class="hide-sm" onclick="showPage('referral'); return false;">Referrals</a>
+      <div class="header-contact">
+        <a href="tel:+18328951693" class="header-phone">(832) 895-1693</a>
+        <a href="tel:+18328951693" class="btn btn-ghost btn-contact">Call</a>
+        <a href="sms:+18328951693" class="btn btn-ghost btn-contact">Text us</a>
+      </div>
       <button type="button" class="btn btn-sun" onclick="openModal('small','header')">Get my $20 mow</button>
     </nav>
   </div>
@@ -473,7 +520,11 @@
             <button type="submit" class="btn btn-sun">Get my $20 first mow</button>
           </div>
           <p class="zip-msg" id="zipMsg" role="status"></p>
-          <p class="zip-help">Questions first? <a href="sms:+18327984827">Text us</a></p>
+          <p class="zip-help">Questions first? Call or text <a href="tel:+18328951693">(832) 895-1693</a></p>
+          <div class="zip-contacts">
+            <a href="tel:+18328951693" class="btn btn-ghost btn-contact">Call</a>
+            <a href="sms:+18328951693" class="btn btn-ghost btn-contact">Text us</a>
+          </div>
         </form>
       </div>
       <div class="sign-holder" aria-hidden="true">
@@ -596,7 +647,7 @@
         </div>
         <div class="promise-card">
           <h3>Cancel with one message</h3>
-          <p><a href="sms:+18327984827">Text us</a> or <a href="mailto:blambinvestmentsllc@gmail.com?subject=Cancel%20My%20Yard%20Steady%20Service">email us</a> with your name and address. Cancelled the same day, with no fee and no call.</p>
+          <p><a href="sms:+18328951693">Text us</a> or <a href="mailto:blambinvestmentsllc@gmail.com?subject=Cancel%20My%20Yard%20Steady%20Service">email us</a> with your name and address. Cancelled the same day, with no fee and no call.</p>
         </div>
         <div class="promise-card">
           <h3>Locally owned</h3>
@@ -627,7 +678,7 @@
         <details><summary>Do I need to be home?</summary><p>No. Leave the gate unlocked and pets inside on mow day. You can add a gate code or notes when you sign up.</p></details>
         <details><summary>What if it rains?</summary><p>Rain can shift your mow within the 1–3 day service window. If it has to move further, we'll text you.</p></details>
         <details><summary>How do I pay?</summary><p>After you sign up we send a secure Stripe link. Your card is billed weekly, plus 8.25% sales tax. No cash or checks to hand over.</p></details>
-        <details><summary>How do I cancel?</summary><p><a href="sms:+18327984827">Text us</a> or <a href="mailto:blambinvestmentsllc@gmail.com?subject=Cancel%20My%20Yard%20Steady%20Service">email us</a> with your name and address. We cancel the same day. There's no contract and no cancellation fee.</p></details>
+        <details><summary>How do I cancel?</summary><p><a href="sms:+18328951693">Text us</a> or <a href="mailto:blambinvestmentsllc@gmail.com?subject=Cancel%20My%20Yard%20Steady%20Service">email us</a> with your name and address. We cancel the same day. There's no contract and no cancellation fee.</p></details>
         <details><summary>My grass is really overgrown. Is that a problem?</summary><p>Not at all. If it's over 9 inches tall on the first visit, a one-time overgrowth fee of 50–100% of the weekly rate may apply. We'll always tell you before charging it.</p></details>
       </div>
     </div>
@@ -639,7 +690,8 @@
       <p>See what weekly service is like for twenty bucks. If it's not for you, cancel with one text.</p>
       <div class="actions">
         <button type="button" class="btn btn-sun" onclick="openModal('small','footer-cta')">Get my $20 first mow</button>
-        <a href="sms:+18327984827" class="btn btn-ghost">Text us a question</a>
+        <a href="tel:+18328951693" class="btn btn-ghost">Call (832) 895-1693</a>
+        <a href="sms:+18328951693" class="btn btn-ghost">Text us</a>
       </div>
     </div>
   </section>
@@ -702,7 +754,7 @@
         <details><summary>Why is there a $600 yearly cap?</summary><p>The IRS requires a 1099 for payments to an individual over $600 a year. To keep it simple during launch, referral earnings are capped there.</p></details>
         <details><summary>Do I need to be a customer?</summary><p>No, anyone can refer. You don't need to be a lawn customer yourself.</p></details>
       </div>
-      <div style="margin-top:32px;"><button type="button" class="btn btn-sun" onclick="showPage('home')">Back to lawn service</button></div>
+      <div style="margin-top:32px;"><a href="/" class="btn btn-sun" onclick="showPage('home'); return false;">Back to lawn service</a></div>
     </div>
   </section>
 </main>
@@ -712,20 +764,25 @@
     <div>
       <strong style="color:#fff; font-family:var(--head); font-size:1.4rem;">Yard Steady</strong>
       <p>Weekly lawn mowing in Pearland, Manvel and Friendswood, TX.</p>
+      <p class="footer-phone"><a href="tel:+18328951693">(832) 895-1693</a></p>
+      <p class="footer-actions">
+        <a href="tel:+18328951693" class="btn btn-ghost btn-contact">Call</a>
+        <a href="sms:+18328951693" class="btn btn-ghost btn-contact">Text us</a>
+      </p>
       <p class="small">© 2026 Yard Steady, a brand of BLambInvestments LLC.</p>
     </div>
     <nav aria-label="Footer">
-      <a href="sms:+18327984827">Text us</a>
       <a href="mailto:blambinvestmentsllc@gmail.com">blambinvestmentsllc@gmail.com</a>
       <a href="mailto:blambinvestmentsllc@gmail.com?subject=Cancel%20My%20Yard%20Steady%20Service&body=Name%3A%20%0AService%20address%3A%20%0A%0APlease%20cancel%20my%20weekly%20service.">Email us to cancel</a>
-      <a href="#" onclick="showPage('referral'); return false;">Referral program</a>
+      <a href="/referral" onclick="showPage('referral'); return false;">Referral program</a>
     </nav>
   </div>
 </footer>
 
 <div class="mobile-bar" id="mobileBar">
   <button type="button" class="btn btn-sun" onclick="openModal('small','mobile-bar')">Get my $20 first mow</button>
-  <a href="sms:+18327984827" class="btn btn-ghost" aria-label="Text us">Text</a>
+  <a href="tel:+18328951693" class="btn btn-ghost btn-contact" aria-label="Call (832) 895-1693">Call</a>
+  <a href="sms:+18328951693" class="btn btn-ghost btn-contact" aria-label="Text (832) 895-1693">Text</a>
 </div>
 
 <!-- SIGNUP -->
@@ -855,6 +912,14 @@
   const utm = ['utm_source','utm_medium','utm_campaign'].reduce((o,k)=>{ if(params.get(k)) o[k]=params.get(k); return o; }, {});
 
   function track(name, data){ try { if (window.gtag) window.gtag('event', name, data || {}); } catch(e){} }
+
+  document.addEventListener('click', function (event) {
+    var el = event.target && event.target.closest ? event.target.closest('a[href]') : null;
+    if (!el) return;
+    var href = el.getAttribute('href') || '';
+    if (href.indexOf('tel:') === 0) track('call_click', { link_url: href });
+    else if (href.indexOf('sms:') === 0) track('text_click', { link_url: href });
+  });
 
   /* Zip check */
   function checkZip(e){
@@ -1001,7 +1066,7 @@
       .catch(err => {
         console.error(err);
         btn.disabled = false; btn.textContent = 'Send my signup';
-        $('reviewNote').innerHTML = `<p style="color:var(--error);"><b>That didn’t go through.</b> Try again, or <a href="sms:+18327984827">text us</a> and we’ll set you up.</p>`;
+        $('reviewNote').innerHTML = `<p style="color:var(--error);"><b>That didn’t go through.</b> Try again, or <a href="sms:+18328951693">text us</a> and we’ll set you up.</p>`;
         track('signup_error', { plan });
       });
   }
@@ -1018,7 +1083,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     $('page-referral').style.display = 'none';
     updateEarnings(5);
-    if (params.get('page') === 'referral') showPage('referral');
+    if (params.get('page') === 'referral' || /\/referral\/?(?:index\.html)?$/.test(location.pathname)) showPage('referral');
     if (params.get('start')) openModal(params.get('plan') === 'large' ? 'large' : 'small', 'link-' + (params.get('from') || 'start'));
   });
 </script>
