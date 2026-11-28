@@ -86,7 +86,7 @@
   header.site { background: var(--paper); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; }
   header.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
   .logo { white-space: nowrap; display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-family: var(--head); font-weight: 900; font-size: 1.6rem; }
-  .logo svg { flex-shrink: 0; }
+  .logo-mark { width: 40px; height: 40px; flex-shrink: 0; display: block; }
   .header-links { display: flex; align-items: center; gap: 22px; }
   .header-links a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
   .header-links a:hover { color: var(--turf); text-decoration: underline; }
@@ -472,11 +472,11 @@
  ]
 }
 </script>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232D6A2E'/%3E%3Cpath d='M0 64 L22 0 H36 L14 64Z' fill='%233A7D39'/%3E%3Cpath d='M28 64 L50 0 H64 V8 L44 64Z' fill='%233A7D39'/%3E%3Ctext x='32' y='43' font-family='Arial,Helvetica,sans-serif' font-weight='900' font-size='26' fill='%23ffffff' text-anchor='middle'%3EYS%3C/text%3E%3C/svg%3E">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
 
@@ -488,7 +488,7 @@
 <header class="site">
   <div class="wrap">
     <a href="/" class="logo" onclick="showPage('home'); return false;" aria-label="Yard Steady home">
-      <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#2D6A2E"/><path d="M0 64 L22 0 H36 L14 64Z" fill="#3A7D39"/><path d="M28 64 L50 0 H64 V8 L44 64Z" fill="#3A7D39"/></svg>
+      <img class="logo-mark" src="/logo.png" width="40" height="40" alt="Yard Steady">
       Yard Steady
     </a>
     <nav class="header-links" aria-label="Main">

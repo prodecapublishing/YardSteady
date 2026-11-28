@@ -1,0 +1,19 @@
+{
+  "name": "Yard Steady",
+  "short_name": "Yard Steady",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#2D6A2E",
+  "background_color": "#FAF8EC",
+  "display": "browser"
+}
